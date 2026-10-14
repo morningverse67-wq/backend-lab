@@ -65,4 +65,4 @@ docker rm -f lab-n1-mysql   # 끝나면 정리
 
 ## 관련 글
 
-- Velog: [N+1 쿼리는 왜 생길까?](https://velog.io/@morningverse/N1-쿼리는-왜-생길까)
+- Velog: [MyBatis N+1 문제 해결, 로그 확인부터 일대다 페이징까지](https://velog.io/@morningverse/N1-쿼리는-왜-생길까)
