@@ -12,9 +12,11 @@
 | # | 주제 | 한 줄 요약 |
 |---|---|---|
 | 001 | [N+1 쿼리](labs/001-n-plus-one) | 쿼리 501번 vs 1번. 비용의 대부분은 실행이 아니라 왕복 |
+| 002 | [인덱스 vs 풀 스캔](labs/002-index-scan) | 선택적 조회는 887배 빨라지고, 90%를 읽는 조회는 0.9배 |
 
 다음 주제는 [ROADMAP.md](ROADMAP.md)에.
 
 ## Links
 
 - Blog: [velog.io/@morningverse](https://velog.io/@morningverse)
+- 면접 질문별 정리: [backend-interview-lab](https://github.com/morningverse67-wq/backend-interview-lab)
