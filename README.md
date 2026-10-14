@@ -2,6 +2,18 @@
 
 ![백엔드 성능 문제를 재현하고 측정하는 backend-lab](assets/cover.png)
 
+Small, runnable experiments that reproduce and measure backend performance problems: N+1, indexes, paging, MyBatis.
+
+### 30초 실행
+
+```bash
+git clone https://github.com/morningverse67-wq/backend-lab.git && cd backend-lab
+python3 labs/001-n-plus-one/main.py      # N+1: 쿼리 501번 vs 1번 (Python 3, 설치 없음)
+python3 labs/002-index-scan/main.py      # 인덱스 vs 풀 스캔
+```
+
+MyBatis + MySQL 버전(Java 21, Maven, Docker)은 [labs/003-mybatis-nplusone](labs/003-mybatis-nplusone)의 한 줄 명령으로 실행한다.
+
 백엔드에서 자주 만나는 데이터·성능 문제를 **작게 재현하고, 직접 측정해서, 기록**하는 실험실.
 
 - 실험 하나 = 폴더 하나 (`labs/NNN-topic/`)
@@ -16,7 +28,7 @@
 |---|---|---|---|---|
 | 001 | [N+1 쿼리](labs/001-n-plus-one) | 쿼리 501번 vs 1번. 비용의 대부분은 실행이 아니라 왕복 | Python | [N+1 쿼리는 왜 생길까?](https://velog.io/@morningverse/N1-쿼리는-왜-생길까) |
 | 002 | [인덱스 vs 풀 스캔](labs/002-index-scan) | 선택적 조회는 887배 빨라지고, 90%를 읽는 조회는 0.9배 | Python | 후속 글 후보 |
-| 003 | [MyBatis N+1 (MySQL)](labs/003-mybatis-nplusone) | 중첩 select 21번 → join resultMap 1번, 부모 페이징 + IN 2번. `<id>`를 빼면 15% 느림 | Java | [N+1 쿼리는 왜 생길까?](https://velog.io/@morningverse/N1-쿼리는-왜-생길까) |
+| 003 | [MyBatis N+1 (MySQL)](labs/003-mybatis-nplusone) | 중첩 select 21번 → join resultMap 1번, 부모 페이징 + IN 2번. `<id>` 대신 `<result>`면 약 15% 느림 | Java | [N+1 쿼리는 왜 생길까?](https://velog.io/@morningverse/N1-쿼리는-왜-생길까) |
 
 다음 주제는 [ROADMAP.md](ROADMAP.md)에.
 
