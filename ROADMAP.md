@@ -4,6 +4,7 @@
 
 ## DB / 쿼리
 - [x] N+1 쿼리: 지연 로딩 vs JOIN vs IN 배치 (001)
+- [x] MyBatis N+1: 중첩 select vs join resultMap vs 부모 페이징 + IN, `<id>` 유무 (003)
 - [x] 인덱스 유무에 따른 조회 성능과 `EXPLAIN QUERY PLAN` 읽기 (002)
 - [ ] 복합 인덱스 컬럼 순서가 결과를 바꾸는 경우
 - [ ] OFFSET 페이징 vs 커서(keyset) 페이징

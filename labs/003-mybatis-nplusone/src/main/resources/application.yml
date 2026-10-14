@@ -1,0 +1,12 @@
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:33061/blog
+    username: root
+    password: pw
+mybatis:
+  type-aliases-package: com.example.blog
+
+# 글 원문 그대로
+logging:
+  level:
+    com.example.blog.mapper: debug   # 매퍼 인터페이스나 XML namespace가 있는 패키지

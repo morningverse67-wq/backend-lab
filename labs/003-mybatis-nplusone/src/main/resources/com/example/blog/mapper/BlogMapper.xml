@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.blog.mapper.BlogMapper">
+
+  <!-- ===== 글 원문 그대로: N+1 이 생기는 매퍼 ===== -->
+  <resultMap id="blogResult" type="Blog">
+    <collection property="posts" column="id" ofType="Post" select="selectPostsForBlog"/>
+  </resultMap>
+
+  <select id="selectBlogs" resultMap="blogResult">
+    SELECT * FROM BLOG
+  </select>
+
+  <select id="selectPostsForBlog" resultType="Post">
+    SELECT * FROM POST WHERE BLOG_ID = #{id}
+  </select>
+
+  <!-- ===== 글 원문 그대로: 해결 1 ===== -->
+  <select id="selectBlogsWithPosts" resultMap="blogWithPostsResult">
+    SELECT B.id    AS blog_id,
+           B.title AS blog_title,
+           P.id    AS post_id,
+           P.subject AS post_subject
+    FROM BLOG B
+    LEFT OUTER JOIN POST P ON P.blog_id = B.id
+  </select>
+
+  <resultMap id="blogWithPostsResult" type="Blog">
+    <id property="id" column="blog_id"/>
+    <result property="title" column="blog_title"/>
+    <collection property="posts" ofType="Post" resultMap="postResult" columnPrefix="post_"/>
+  </resultMap>
+
+  <resultMap id="postResult" type="Post">
+    <id property="id" column="id"/>
+    <result property="subject" column="subject"/>
+  </resultMap>
+
+  <!-- ===== 개정본: blogResult 에 <id> 추가 (원문은 Blog.id 가 null) ===== -->
+  <resultMap id="blogResultFixed" type="Blog">
+    <id property="id" column="id"/>
+    <collection property="posts" column="id" ofType="Post" select="selectPostsForBlog"/>
+  </resultMap>
+
+  <select id="selectBlogsFixed" resultMap="blogResultFixed">
+    SELECT * FROM BLOG
+  </select>
+
+  <!-- ===== 개정본: blog_id 를 blogId 로 받아 애플리케이션에서 붙일 수 있게 ===== -->
+  <select id="selectPostsByBlogIdsFixed" resultType="Post">
+    SELECT id, blog_id AS blogId, subject FROM POST
+    WHERE blog_id IN
+    <foreach item="id" collection="blogIds" open="(" separator="," close=")">
+      #{id}
+    </foreach>
+  </select>
+
+  <!-- ===== 실험용 변형 ===== -->
+  <resultMap id="blogFetchLazyResult" type="Blog">
+    <collection property="posts" column="id" ofType="Post" select="selectPostsForBlog" fetchType="lazy"/>
+  </resultMap>
+
+  <select id="selectBlogsFetchLazy" resultMap="blogFetchLazyResult">
+    SELECT * FROM BLOG
+  </select>
+
+  <select id="selectBlogsWithPostsNoId" resultMap="blogWithPostsNoIdResult">
+    SELECT B.id AS blog_id, B.title AS blog_title, P.id AS post_id, P.subject AS post_subject
+    FROM BLOG B LEFT OUTER JOIN POST P ON P.blog_id = B.id
+  </select>
+
+  <resultMap id="blogWithPostsNoIdResult" type="Blog">
+    <result property="id" column="blog_id"/>
+    <result property="title" column="blog_title"/>
+    <collection property="posts" ofType="Post" resultMap="postNoIdResult" columnPrefix="post_"/>
+  </resultMap>
+
+  <resultMap id="postNoIdResult" type="Post">
+    <result property="id" column="id"/>
+    <result property="subject" column="subject"/>
+  </resultMap>
+
+  <!-- <id> 줄을 아예 지운 경우 -->
+  <select id="selectBlogsWithPostsIdDeleted" resultMap="blogWithPostsIdDeletedResult">
+    SELECT B.id AS blog_id, B.title AS blog_title, P.id AS post_id, P.subject AS post_subject
+    FROM BLOG B LEFT OUTER JOIN POST P ON P.blog_id = B.id
+  </select>
+
+  <resultMap id="blogWithPostsIdDeletedResult" type="Blog">
+    <result property="title" column="blog_title"/>
+    <collection property="posts" ofType="Post" resultMap="postResult" columnPrefix="post_"/>
+  </resultMap>
+
+  <select id="selectBlogsWithPostsLimit" resultMap="blogWithPostsResult">
+    SELECT B.id AS blog_id, B.title AS blog_title, P.id AS post_id, P.subject AS post_subject
+    FROM BLOG B LEFT OUTER JOIN POST P ON P.blog_id = B.id
+    ORDER BY B.id, P.id
+    LIMIT #{limit}
+  </select>
+
+  <!-- ===== 글 원문 그대로: 해결 2 ===== -->
+  <!-- LIMIT/OFFSET은 MySQL·PostgreSQL 문법 기준이에요 -->
+  <select id="selectBlogPage" resultType="Blog">
+    SELECT id, title FROM BLOG
+    ORDER BY id
+    LIMIT #{size} OFFSET #{offset}
+  </select>
+
+  <select id="selectPostsByBlogIds" resultType="Post">
+    SELECT * FROM POST
+    WHERE blog_id IN
+    <foreach item="id" collection="blogIds" open="(" separator="," close=")">
+      #{id}
+    </foreach>
+  </select>
+</mapper>
