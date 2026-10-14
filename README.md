@@ -1,5 +1,7 @@
 # backend-lab
 
+![백엔드 성능 문제를 재현하고 측정하는 backend-lab](assets/cover.png)
+
 백엔드에서 자주 만나는 데이터·성능 문제를 **작게 재현하고, 직접 측정해서, 기록**하는 실험실.
 
 - 실험 하나 = 폴더 하나 (`labs/NNN-topic/`)

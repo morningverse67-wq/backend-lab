@@ -26,6 +26,8 @@ python3 main.py
 
 ## 결과
 
+![N+1 501번 321.82ms, JOIN 1번 1.68ms, IN 일괄 조회 2번 2.08ms 비교 막대 그래프](result.png)
+
 | 방식 | 쿼리 수 | in-memory (ms) | 왕복 0.5ms 가정 (ms) |
 |---|---:|---:|---:|
 | n_plus_one | 501 | 0.83 | 321.82 |
