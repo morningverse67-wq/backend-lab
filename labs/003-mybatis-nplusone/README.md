@@ -42,14 +42,14 @@ docker rm -f lab-n1-mysql   # 끝나면 정리
 
 그 밖에 확인한 것:
 
-- **`<id>` 유무**: `<id>`를 `<result>`로 바꾸면 결과는 같고 20,000행 기준 평균 21~22ms → 25~26ms (약 15% 느림, 3회 측정). `<id>` 줄을 **지우면** Blog.id가 null이 되고, 제목이 같은 블로그가 한 객체로 합쳐진다(3개 → 2개).
+- **`<id>` 유무**: `<id>`를 `<result>`로 바꾸면 결과는 같고 20,000행 기준 평균 21~23ms → 25~26ms (약 11~19% 느림, 측정 회차마다 다름). `<id>` 줄을 **지우면** Blog.id가 null이 되고, 제목이 같은 블로그가 한 객체로 합쳐진다(3개 → 2개).
 - **일대다 join + `LIMIT 3`**: 행 단위로 잘려서 `[A[글1, 글2], B[글3]]`. 블로그 C가 사라지고 B의 글이 하나 빠진다.
 - **중첩 select의 id가 null**: `column="id"`를 collection이 쓰면 그 컬럼은 자동 매핑에서 빠진다. `<id property="id" column="id"/>`를 추가해서 해결.
 - **IN으로 받은 `Post.blogId`가 null**: `SELECT *` + `resultType="Post"`는 `mapUnderscoreToCamelCase` 기본값(false) 때문에 `blog_id`를 못 받는다. `blog_id AS blogId`로 해결.
 - **빈 IN**: 부모가 없으면 SQL이 `WHERE blog_id IN`으로 끝나서 `SQLSyntaxErrorException`.
 - **로그 레벨**: DEBUG에 SQL(Preparing/Parameters/Total), TRACE에 결과 행(Columns/Row). Spring Boot에서는 `logging.level.com.example.blog.mapper: debug`만으로 SQL이 보인다(Preparing 21줄, Row 0줄).
 
-<sub>JDK 21 / MyBatis 3.5.19 / mybatis-spring-boot-starter 3.0.5 / Spring Boot 3.5.0 / MySQL 8.4.11 (Docker) / mysql-connector-j 9.2.0 / Apple M5, 10코어, 16GB, macOS 26.6. 2026-10-14 측정. 시간은 매퍼 호출 시간만 쟀고, 2026-10-14 재실행에서는 26.4ms → 29.3ms(약 11%)로 나왔다. 환경에 따라 달라질 수 있음.</sub>
+<sub>JDK 21 / MyBatis 3.5.19 / mybatis-spring-boot-starter 3.0.5 / Spring Boot 3.5.0 / MySQL 8.4.11 (Docker) / mysql-connector-j 9.2.0 / Apple M5, 10코어, 16GB, macOS 26.6. 2026-10-14 측정, 2026-10-16 3회 재측정(22.2 → 25.9, 22.8 → 26.1, 21.5 → 25.6ms). 시간은 매퍼 호출 시간만 쟀고, 2026-10-14 재실행에서는 26.4ms → 29.3ms(약 11%)로 나왔다. 환경에 따라 달라질 수 있음.</sub>
 
 ## 배운 점
 
