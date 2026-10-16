@@ -42,7 +42,7 @@ docker rm -f lab-n1-mysql   # 끝나면 정리
 
 그 밖에 확인한 것:
 
-- **`<id>` 유무**: `<id>`를 `<result>`로 바꾸면 결과는 같고 20,000행 기준 평균 21~23ms → 25~26ms (약 11~19% 느림, 측정 회차마다 다름). `<id>` 줄을 **지우면** Blog.id가 null이 되고, 제목이 같은 블로그가 한 객체로 합쳐진다(3개 → 2개).
+- **`<id>` 유무**: `<id>`를 `<result>`로 바꾸면 결과는 같고 20,000행 기준 평균 시간이 늘었다. 2026-10-16 3회 재측정은 21.5~22.8ms → 25.6~26.1ms(회차별 약 15~19% 느림), 2026-10-14 실행은 26.4ms → 29.3ms(약 11% 느림). `<id>` 줄을 **지우면** Blog.id가 null이 되고, 제목이 같은 블로그가 한 객체로 합쳐진다(3개 → 2개).
 - **일대다 join + `LIMIT 3`**: 행 단위로 잘려서 `[A[글1, 글2], B[글3]]`. 블로그 C가 사라지고 B의 글이 하나 빠진다.
 - **중첩 select의 id가 null**: `column="id"`를 collection이 쓰면 그 컬럼은 자동 매핑에서 빠진다. `<id property="id" column="id"/>`를 추가해서 해결.
 - **IN으로 받은 `Post.blogId`가 null**: `SELECT *` + `resultType="Post"`는 `mapUnderscoreToCamelCase` 기본값(false) 때문에 `blog_id`를 못 받는다. `blog_id AS blogId`로 해결.
