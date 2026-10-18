@@ -33,6 +33,7 @@ MyBatis + MySQL 버전(Java 21, Maven, Docker)은 [labs/003-mybatis-nplusone](la
 | 005 | [OFFSET vs 커서 페이징](labs/005-offset-vs-keyset-paging) | 10,000페이지 100회 조회 합계 OFFSET 187.96ms vs 커서 0.77ms(244.7배). 대신 특정 페이지로 바로 이동은 OFFSET이 52.3배 빠름 | Python | 후속 글 후보 |
 | 006 | [인덱스를 못 타는 쿼리](labs/006-non-sargable-queries) | 인덱스는 그대로, WHERE만 고쳐서 날짜 함수 41.3배, `LIKE '%-1234'` 876.4배 (각 100회 조회 합계). 식 인덱스는 같은 식에만 효과 | Python | 후속 글 후보 |
 | 007 | [커버링 인덱스](labs/007-covering-index) | 테이블을 안 읽으니 한 달 합계 10회 82.20ms → 4.95ms(16.6배). 인덱스 밖 컬럼을 하나라도 조회하면 1.0배, 인덱스 크기는 1.71배 | Python | 후속 글 후보 |
+| 008 | [대량 INSERT](labs/008-bulk-insert) | 1만 건을 한 건마다 COMMIT 1,948.84ms → 트랜잭션 하나 8.08ms(241.2배). 1,000건 단위 커밋도 10.16ms. 대신 하나로 묶으면 1건 실패에 0건이 남음 | Python | 후속 글 후보 |
 
 다음 주제는 [ROADMAP.md](ROADMAP.md)에.
 

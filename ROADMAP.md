@@ -10,7 +10,7 @@
 - [x] OFFSET 페이징 vs 커서(keyset) 페이징 (005)
 - [x] 인덱스를 못 타는 쿼리: 함수 씌운 컬럼, LIKE '%x', 암묵적 형변환 (006)
 - [x] 커버링 인덱스 (007)
-- [ ] 대량 INSERT: 한 건씩 vs executemany vs 트랜잭션 묶기
+- [x] 대량 INSERT: 한 건씩 vs executemany vs 트랜잭션 묶기 (008)
 - [ ] COUNT(*) 비용과 대안
 
 ## 트랜잭션 / 동시성
