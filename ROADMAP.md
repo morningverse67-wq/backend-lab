@@ -14,7 +14,7 @@
 - [x] COUNT(*) 비용과 대안 (009)
 
 ## 트랜잭션 / 동시성
-- [ ] Lost update 재현과 낙관적 락(version 컬럼)
+- [x] Lost update 재현과 낙관적 락(version 컬럼) (010)
 - [ ] 비관적 락(SELECT ... FOR UPDATE 개념)과 트레이드오프
 - [ ] 재고 차감 동시성: 원자적 UPDATE vs 읽고-쓰기
 - [ ] 트랜잭션 격리 수준별 현상 (dirty/non-repeatable/phantom)
