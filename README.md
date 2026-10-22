@@ -37,6 +37,7 @@ MyBatis + MySQL 버전(Java 21, Maven, Docker)은 [labs/003-mybatis-nplusone](la
 | 009 | [COUNT(*) 비용과 대안](labs/009-count-cost) | 100만 건 중 59.9만 건 세기: 인덱스 없음 21.16ms, 인덱스 6.12ms, 트리거 카운터 0.0005ms. 대신 카운터 때문에 INSERT 2.90배·DELETE 4.73배 느려짐. 있는지만 볼 땐 EXISTS, 단 결과가 없으면 1.0배 | Python | 후속 글 후보 |
 | 010 | [Lost update와 낙관적 락](labs/010-lost-update-optimistic-lock) | 한 행에 +1 요청 1,600번: 락 없이 읽고-쓰기는 최종 값 200(1,400건 유실), `version` 낙관적 락은 1,600. 대신 재시도 5,995번에 시간 2.09배, 요청이 흩어지면 1.03배 | Python | 후속 글 후보 |
 | 011 | [비관적 락과 트레이드오프](labs/011-pessimistic-lock) | 한 행에 +1 요청 1,600번: 행을 먼저 잠그면 재시도 0번, p99 174.32ms → 18.92ms. 전체 시간은 2,767.2ms vs 2,771.7ms로 같고 중앙값은 1.66ms → 13.62ms. 락 하나로 전부 묶으면 흩어진 요청도 2.49배 느려짐 | Python | 후속 글 후보 |
+| 012 | [재고 차감 동시성](labs/012-stock-decrement-concurrency) | 재고 100개에 주문 400건: 읽고-쓰기는 400개를 팔고(300개 초과), `qty - 1`만 바꾸면 107개에 재고 -7. 원자적 UPDATE는 정확히 100개, 주문 800건은 락보다 2.17배 빠름(634.9ms vs 1,379.7ms). 대신 장바구니처럼 여러 행이면 트랜잭션 필요 | Python | 후속 글 후보 |
 
 다음 주제는 [ROADMAP.md](ROADMAP.md)에.
 
