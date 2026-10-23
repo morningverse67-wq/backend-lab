@@ -17,7 +17,7 @@
 - [x] Lost update 재현과 낙관적 락(version 컬럼) (010)
 - [x] 비관적 락(SELECT ... FOR UPDATE 개념)과 트레이드오프 (011)
 - [x] 재고 차감 동시성: 원자적 UPDATE vs 읽고-쓰기 (012)
-- [ ] 트랜잭션 격리 수준별 현상 (dirty/non-repeatable/phantom)
+- [x] 트랜잭션 격리 수준별 현상 (dirty/non-repeatable/phantom) (013)
 - [ ] 멱등성 키로 중복 결제 요청 막기
 - [ ] 데드락 재현과 락 순서 고정
 
