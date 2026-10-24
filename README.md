@@ -39,6 +39,7 @@ MyBatis + MySQL 버전(Java 21, Maven, Docker)은 [labs/003-mybatis-nplusone](la
 | 011 | [비관적 락과 트레이드오프](labs/011-pessimistic-lock) | 한 행에 +1 요청 1,600번: 행을 먼저 잠그면 재시도 0번, p99 174.32ms → 18.92ms. 전체 시간은 2,767.2ms vs 2,771.7ms로 같고 중앙값은 1.66ms → 13.62ms. 락 하나로 전부 묶으면 흩어진 요청도 2.49배 느려짐 | Python | 후속 글 후보 |
 | 012 | [재고 차감 동시성](labs/012-stock-decrement-concurrency) | 재고 100개에 주문 400건: 읽고-쓰기는 400개를 팔고(300개 초과), `qty - 1`만 바꾸면 107개에 재고 -7. 원자적 UPDATE는 정확히 100개, 주문 800건은 락보다 2.17배 빠름(634.9ms vs 1,379.7ms). 대신 장바구니처럼 여러 행이면 트랜잭션 필요 | Python | 후속 글 후보 |
 | 013 | [격리 수준 현상](labs/013-isolation-anomalies) | A를 읽고 0.2ms 뒤 B를 읽는 합계 보고서 1,000건 중 235건이 틀림(문장마다 다른 시점을 읽음). 읽기 트랜잭션으로 묶으면 0건, 시간은 같음(p50 0.315ms vs 0.314ms). 대신 스냅샷을 열어 두면 커밋 3,000번에 WAL 3.93MB → 11.79MB(3.0배) | Python | 후속 글 후보 |
+| 014 | [멱등성 키로 중복 결제 막기](labs/014-idempotency-key) | 같은 결제 요청 3번씩 주문 200건: 키를 먼저 조회하면 DB 행은 200건인데 PG 결제는 599번, 결제 전에 키부터 저장하면 200번. 재시도는 같은 키여야 함(시도마다 새 키면 400번). 대가는 요청당 0.148ms, PG 2ms 포함 1.22배 | Python | [이벤트 중복 처리, SQLite DO NOTHING 뒤 집계가 늘어나는 함정](https://velog.io/@morningverse/sqlite-event-dedup-returning-count) |
 
 다음 주제는 [ROADMAP.md](ROADMAP.md)에.
 
