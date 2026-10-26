@@ -41,6 +41,7 @@ MyBatis + MySQL 버전(Java 21, Maven, Docker)은 [labs/003-mybatis-nplusone](la
 | 013 | [격리 수준 현상](labs/013-isolation-anomalies) | A를 읽고 0.2ms 뒤 B를 읽는 합계 보고서 1,000건 중 235건이 틀림(문장마다 다른 시점을 읽음). 읽기 트랜잭션으로 묶으면 0건, 시간은 같음(p50 0.315ms vs 0.314ms). 대신 스냅샷을 열어 두면 커밋 3,000번에 WAL 3.93MB → 11.79MB(3.0배) | Python | 후속 글 후보 |
 | 014 | [멱등성 키로 중복 결제 막기](labs/014-idempotency-key) | 같은 결제 요청 3번씩 주문 200건: 키를 먼저 조회하면 DB 행은 200건인데 PG 결제는 599번, 결제 전에 키부터 저장하면 200번. 재시도는 같은 키여야 함(시도마다 새 키면 400번). 대가는 요청당 0.148ms, PG 2ms 포함 1.22배 | Python | [이벤트 중복 처리, SQLite DO NOTHING 뒤 집계가 늘어나는 함정](https://velog.io/@morningverse/sqlite-event-dedup-returning-count) |
 | 015 | [데드락과 락 순서 고정](labs/015-deadlock-lock-order) | 계좌 2개 사이 이체 200건을 양방향으로: 순서 없이 잠그면 데드락 250번에 521.0ms(감지 없이 30ms 타임아웃만 쓰면 6,658.9ms), id 작은 계좌부터 잠그면 0번에 345.1ms. 계좌 1,000개로 흩어지면 셋 다 0번, 1.0배 | Python | 후속 글 후보 |
+| 016 | [캐시 없음 vs LRU 캐시](labs/016-lru-cache-latency) | 상품 페이지 2만 건: 인기 상품에 몰리면 LRU 1,000개로 209.6ms → 77.5ms(히트 67.1%, 2.70배), 고르게 흩어지면 1.07배(히트 9.7%). p50은 0.0104 → 0.0001ms인데 p99는 거의 그대로. 요청 2%가 쓰기면 무효화 없이 36.3%가 옛 값 | Python | 후속 글 후보 |
 
 다음 주제는 [ROADMAP.md](ROADMAP.md)에.
 
