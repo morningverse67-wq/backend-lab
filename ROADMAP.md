@@ -23,7 +23,7 @@
 
 ## 캐시
 - [x] 캐시 없음 vs LRU 캐시 응답 시간 (016)
-- [ ] Cache stampede와 single-flight
+- [x] Cache stampede와 single-flight (017)
 - [ ] TTL + jitter로 동시 만료 피하기
 - [ ] Write-through vs write-behind vs cache-aside
 
