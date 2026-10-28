@@ -43,6 +43,7 @@ MyBatis + MySQL 버전(Java 21, Maven, Docker)은 [labs/003-mybatis-nplusone](la
 | 015 | [데드락과 락 순서 고정](labs/015-deadlock-lock-order) | 계좌 2개 사이 이체 200건을 양방향으로: 순서 없이 잠그면 데드락 250번에 521.0ms(감지 없이 30ms 타임아웃만 쓰면 6,658.9ms), id 작은 계좌부터 잠그면 0번에 345.1ms. 계좌 1,000개로 흩어지면 셋 다 0번, 1.0배 | Python | 후속 글 후보 |
 | 016 | [캐시 없음 vs LRU 캐시](labs/016-lru-cache-latency) | 상품 페이지 2만 건: 인기 상품에 몰리면 LRU 1,000개로 209.6ms → 77.5ms(히트 67.1%, 2.70배), 고르게 흩어지면 1.07배(히트 9.7%). p50은 0.0104 → 0.0001ms인데 p99는 거의 그대로. 요청 2%가 쓰기면 무효화 없이 36.3%가 옛 값 | Python | 후속 글 후보 |
 | 017 | [Cache stampede와 single-flight](labs/017-cache-stampede-single-flight) | 캐시 만료 순간 같은 키로 요청 32개: 각자 쿼리하면 32번에 140.6ms(p99 161.63ms), single-flight로 합치면 1번에 16.6ms(8.5배). 키 32개로 흩어지면 0.91배로 이득 없음. SWR은 p99 0.47ms 대신 만료된 값을 줌 | Python | 후속 글 후보 |
+| 018 | [TTL + jitter로 동시 만료 피하기](labs/018-ttl-jitter) | 키 1,000개를 같은 TTL 60초로 한꺼번에 채우면 60초마다 만료가 몰려 가장 바쁜 1초에 DB 조회 592번. TTL에 0~20%를 더하면 96번(±20%는 52번), 전체 조회 수는 거의 같음 | Python | 후속 글 후보 |
 
 다음 주제는 [ROADMAP.md](ROADMAP.md)에.
 
