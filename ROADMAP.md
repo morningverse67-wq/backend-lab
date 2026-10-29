@@ -25,7 +25,7 @@
 - [x] 캐시 없음 vs LRU 캐시 응답 시간 (016)
 - [x] Cache stampede와 single-flight (017)
 - [x] TTL + jitter로 동시 만료 피하기 (018)
-- [ ] Write-through vs write-behind vs cache-aside
+- [x] Write-through vs write-behind vs cache-aside (019)
 
 ## API / 서버
 - [ ] Rate limiter: fixed window vs sliding window vs token bucket
