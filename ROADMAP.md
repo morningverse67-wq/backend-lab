@@ -28,7 +28,7 @@
 - [x] Write-through vs write-behind vs cache-aside (019)
 
 ## API / 서버
-- [ ] Rate limiter: fixed window vs sliding window vs token bucket
+- [x] Rate limiter: fixed window vs exact sliding window log vs token bucket (020)
 - [ ] 재시도 + 지수 백오프 + jitter
 - [ ] Circuit breaker 상태 전이
 - [ ] 커넥션 풀 크기와 대기 시간

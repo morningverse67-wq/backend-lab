@@ -1,0 +1,88 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="670" viewBox="0 0 1000 670" role="img" aria-labelledby="title desc">
+<title id="title">Rate limiter: accepted counts and boundary bursts</title>
+<desc id="desc">Same deterministic input per policy. Limit 5 per 1000 ms, token capacity 5, refill 5 per second. No latency measured.</desc>
+<rect width="1000" height="670" fill="#f8fafc"/>
+<g font-family="sans-serif" fill="#0f172a">
+<text x="28" y="42" font-size="26" font-weight="bold">Rate limiter / deterministic fake clock</text>
+<text x="28" y="74" font-size="16">Limit 5 / 1000 ms | bucket capacity 5, refill 5/s, initially full</text>
+<text x="28" y="120" font-size="16" font-weight="bold">Workload</text>
+<text x="220" y="120" font-size="16" font-weight="bold">Policy</text>
+<text x="465" y="120" font-size="16" font-weight="bold">Requests</text>
+<text x="585" y="120" font-size="16" font-weight="bold">Allowed</text>
+<text x="695" y="120" font-size="16" font-weight="bold">Denied</text>
+<text x="800" y="120" font-size="16" font-weight="bold">Peak rolling 1s</text>
+<text x="28" y="156" font-size="16">steady</text>
+<text x="220" y="156" font-size="16">FixedWindow</text>
+<text x="465" y="156" font-size="16">30</text>
+<text x="585" y="156" font-size="16">15</text>
+<text x="695" y="156" font-size="16">15</text>
+<text x="800" y="156" font-size="16">5</text>
+<text x="28" y="192" font-size="16">steady</text>
+<text x="220" y="192" font-size="16">SlidingWindowLog</text>
+<text x="465" y="192" font-size="16">30</text>
+<text x="585" y="192" font-size="16">15</text>
+<text x="695" y="192" font-size="16">15</text>
+<text x="800" y="192" font-size="16">5</text>
+<text x="28" y="228" font-size="16">steady</text>
+<text x="220" y="228" font-size="16">TokenBucket</text>
+<text x="465" y="228" font-size="16">30</text>
+<text x="585" y="228" font-size="16">19</text>
+<text x="695" y="228" font-size="16">11</text>
+<text x="800" y="228" font-size="16">9</text>
+<text x="28" y="264" font-size="16">boundary</text>
+<text x="220" y="264" font-size="16">FixedWindow</text>
+<text x="465" y="264" font-size="16">10</text>
+<text x="585" y="264" font-size="16">10</text>
+<text x="695" y="264" font-size="16">0</text>
+<text x="800" y="264" font-size="16">10</text>
+<text x="28" y="300" font-size="16">boundary</text>
+<text x="220" y="300" font-size="16">SlidingWindowLog</text>
+<text x="465" y="300" font-size="16">10</text>
+<text x="585" y="300" font-size="16">5</text>
+<text x="695" y="300" font-size="16">5</text>
+<text x="800" y="300" font-size="16">5</text>
+<text x="28" y="336" font-size="16">boundary</text>
+<text x="220" y="336" font-size="16">TokenBucket</text>
+<text x="465" y="336" font-size="16">10</text>
+<text x="585" y="336" font-size="16">5</text>
+<text x="695" y="336" font-size="16">5</text>
+<text x="800" y="336" font-size="16">5</text>
+<text x="28" y="372" font-size="16">refill_burst</text>
+<text x="220" y="372" font-size="16">FixedWindow</text>
+<text x="465" y="372" font-size="16">10</text>
+<text x="585" y="372" font-size="16">5</text>
+<text x="695" y="372" font-size="16">5</text>
+<text x="800" y="372" font-size="16">5</text>
+<text x="28" y="408" font-size="16">refill_burst</text>
+<text x="220" y="408" font-size="16">SlidingWindowLog</text>
+<text x="465" y="408" font-size="16">10</text>
+<text x="585" y="408" font-size="16">5</text>
+<text x="695" y="408" font-size="16">5</text>
+<text x="800" y="408" font-size="16">5</text>
+<text x="28" y="444" font-size="16">refill_burst</text>
+<text x="220" y="444" font-size="16">TokenBucket</text>
+<text x="465" y="444" font-size="16">10</text>
+<text x="585" y="444" font-size="16">9</text>
+<text x="695" y="444" font-size="16">1</text>
+<text x="800" y="444" font-size="16">9</text>
+<text x="28" y="480" font-size="16">idle_cap</text>
+<text x="220" y="480" font-size="16">FixedWindow</text>
+<text x="465" y="480" font-size="16">20</text>
+<text x="585" y="480" font-size="16">10</text>
+<text x="695" y="480" font-size="16">10</text>
+<text x="800" y="480" font-size="16">5</text>
+<text x="28" y="516" font-size="16">idle_cap</text>
+<text x="220" y="516" font-size="16">SlidingWindowLog</text>
+<text x="465" y="516" font-size="16">20</text>
+<text x="585" y="516" font-size="16">10</text>
+<text x="695" y="516" font-size="16">10</text>
+<text x="800" y="516" font-size="16">5</text>
+<text x="28" y="552" font-size="16">idle_cap</text>
+<text x="220" y="552" font-size="16">TokenBucket</text>
+<text x="465" y="552" font-size="16">20</text>
+<text x="585" y="552" font-size="16">10</text>
+<text x="695" y="552" font-size="16">10</text>
+<text x="800" y="552" font-size="16">5</text>
+<text x="28" y="615" font-size="16">Peak counts accepted requests in (t - 1000 ms, t]. Token bucket is not a strict rolling cap.</text>
+<text x="28" y="644" font-size="16">Single key, sequential simulation. No network, concurrency, distributed state or latency measured.</text>
+</g></svg>
