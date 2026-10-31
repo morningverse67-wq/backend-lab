@@ -29,7 +29,7 @@
 
 ## API / 서버
 - [x] Rate limiter: fixed window vs exact sliding window log vs token bucket (020)
-- [ ] 재시도 + 지수 백오프 + jitter
+- [x] 재시도 + 지수 백오프 + jitter (021)
 - [ ] Circuit breaker 상태 전이
 - [ ] 커넥션 풀 크기와 대기 시간
 - [ ] 동기 vs 스레드풀 vs asyncio로 I/O 작업 처리

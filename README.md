@@ -46,6 +46,7 @@ MyBatis + MySQL 버전(Java 21, Maven, Docker)은 [labs/003-mybatis-nplusone](la
 | 018 | [TTL + jitter로 동시 만료 피하기](labs/018-ttl-jitter) | 키 1,000개를 같은 TTL 60초로 한꺼번에 채우면 60초마다 만료가 몰려 가장 바쁜 1초에 DB 조회 592번. TTL에 0~20%를 더하면 96번(±20%는 52번), 전체 조회 수는 거의 같음 | Python | 후속 글 후보 |
 | 019 | [캐시 쓰기 전략](labs/019-cache-write-policies) | 키 10개에 쓰기 100번: cache-aside 읽기 미스 100번, write-through 0번. 키별 병합 write-behind는 UPDATE 50번, 대신 95번째 응답 후 캐시 유실 시 DB에 최신 값 없는 키 10개 | Python | 후속 글 후보 |
 | 020 | [Rate limiter](labs/020-rate-limiter) | 999/1000ms 경계 요청 10개: fixed window 허용 10개, exact sliding log·token bucket 5개. 0/800ms burst는 token bucket 9개로 strict rolling 한도와 다름 | Python | 후속 글 후보 |
+| 021 | [재시도 + 지수 백오프 + jitter](labs/021-retry-backoff-jitter) | 1초 장애 뒤 클라이언트 100개 재시도: 지수 백오프만 쓰면 계속 함께 몰려 복구 후 거절 450번, 마지막 성공 28,700ms. full jitter면 거절 9번, 4,048ms(100 seed low median) | Python | 후속 글 후보 |
 
 다음 주제는 [ROADMAP.md](ROADMAP.md)에.
 

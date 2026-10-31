@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="430" viewBox="0 0 1000 430" role="img" aria-labelledby="title desc">
+<title id="title">Retry after outage: total attempts and peak load per 100 ms</title>
+<desc id="desc">100 clients, outage until 1000 ms, capacity 10 per 100 ms. Low medians over 100 seeds. Simulated counts, not latency.</desc>
+<rect width="1000" height="430" fill="#f8fafc"/>
+<g font-family="sans-serif" fill="#0f172a">
+<text x="28" y="42" font-size="26" font-weight="bold">Retry after a 1 s outage / 100 clients</text>
+<text x="28" y="74" font-size="16">Bar: total attempts (low median of 100 seeds). Right: rejected after recovery, peak per 100 ms, last success</text>
+<text x="28" y="133" font-size="17">fixed 100ms</text>
+<rect x="190" y="110" width="380.0" height="34" fill="#3b82f6"/>
+<text x="578.0" y="133" font-size="16">1550</text>
+<text x="660" y="133" font-size="16">rejected 450 | peak 100 | last 1900 ms</text>
+<text x="28" y="189" font-size="17">exponential</text>
+<rect x="190" y="166" width="232.9" height="34" fill="#3b82f6"/>
+<text x="430.9" y="189" font-size="16">950</text>
+<text x="660" y="189" font-size="16">rejected 450 | peak 100 | last 28700 ms</text>
+<text x="28" y="245" font-size="17">full jitter</text>
+<rect x="190" y="222" width="149.1" height="34" fill="#3b82f6"/>
+<text x="347.1" y="245" font-size="16">608</text>
+<text x="660" y="245" font-size="16">rejected 9 | peak 15 | last 4048 ms</text>
+<text x="28" y="301" font-size="17">equal jitter</text>
+<rect x="190" y="278" width="137.5" height="34" fill="#3b82f6"/>
+<text x="335.5" y="301" font-size="16">561</text>
+<text x="660" y="301" font-size="16">rejected 41 | peak 27 | last 2909 ms</text>
+<text x="28" y="360" font-size="15">Server: every attempt before 1000 ms fails; after that 10 succeed per 100 ms slot, the rest are rejected.</text>
+<text x="28" y="386" font-size="15">Base 100 ms, cap 3200 ms, max 20 attempts. Deterministic simulation: no network, threads or real latency measured.</text>
+</g></svg>
