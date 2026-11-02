@@ -47,6 +47,7 @@ MyBatis + MySQL 버전(Java 21, Maven, Docker)은 [labs/003-mybatis-nplusone](la
 | 019 | [캐시 쓰기 전략](labs/019-cache-write-policies) | 키 10개에 쓰기 100번: cache-aside 읽기 미스 100번, write-through 0번. 키별 병합 write-behind는 UPDATE 50번, 대신 95번째 응답 후 캐시 유실 시 DB에 최신 값 없는 키 10개 | Python | 후속 글 후보 |
 | 020 | [Rate limiter](labs/020-rate-limiter) | 999/1000ms 경계 요청 10개: fixed window 허용 10개, exact sliding log·token bucket 5개. 0/800ms burst는 token bucket 9개로 strict rolling 한도와 다름 | Python | 후속 글 후보 |
 | 021 | [재시도 + 지수 백오프 + jitter](labs/021-retry-backoff-jitter) | 1초 장애 뒤 클라이언트 100개 재시도: 지수 백오프만 쓰면 계속 함께 몰려 복구 후 거절 450번, 마지막 성공 28,700ms. full jitter면 거절 9번, 4,048ms(100 seed low median) | Python | 후속 글 후보 |
+| 022 | [Circuit breaker 상태 전이](labs/022-circuit-breaker) | 초당 100개 요청, 1초 타임아웃: 장애 중 타임아웃 호출이 breaker 없음 550번 → 109~118번(장애 길이 901가지 low median). 대신 복구 후 거절 OPEN 500ms 75개, 5000ms 330개. 동시에 매달린 호출은 모두 100개 | Python | 후속 글 후보 |
 
 다음 주제는 [ROADMAP.md](ROADMAP.md)에.
 

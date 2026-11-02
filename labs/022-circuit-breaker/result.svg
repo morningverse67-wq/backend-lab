@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="470" viewBox="0 0 1000 470" role="img" aria-labelledby="title desc">
+<title id="title">Circuit breaker over 901 outage lengths: timed-out calls, rejections after recovery, time to close</title>
+<desc id="desc">One request every 10 ms, outage from 1000 ms to 2000..11000 ms, timeout 1000 ms. Low medians of 901 runs. Deterministic simulation counts, not measured latency.</desc>
+<rect width="1000" height="470" fill="#f8fafc"/>
+<g font-family="sans-serif" fill="#0f172a">
+<text x="28" y="42" font-size="26" font-weight="bold">Circuit breaker during an outage / 100 req/s</text>
+<text x="28" y="74" font-size="16">Bar: calls that hung until the 1000 ms timeout. Right: rejected after recovery, time until CLOSED (low median of 901 outage lengths)</text>
+<text x="28" y="143" font-size="17">no breaker</text>
+<rect x="230" y="120" width="300.0" height="34" fill="#3b82f6"/>
+<text x="538.0" y="143" font-size="16">550</text>
+<text x="640" y="143" font-size="16">rejected after 0 | closed +0 ms</text>
+<text x="28" y="199" font-size="17">breaker open 500ms</text>
+<rect x="230" y="176" width="64.4" height="34" fill="#3b82f6"/>
+<text x="302.4" y="199" font-size="16">118</text>
+<text x="640" y="199" font-size="16">rejected after 75 | closed +780 ms</text>
+<text x="28" y="255" font-size="17">breaker open 2000ms</text>
+<rect x="230" y="232" width="61.1" height="34" fill="#3b82f6"/>
+<text x="299.1" y="255" font-size="16">112</text>
+<text x="640" y="255" font-size="16">rejected after 151 | closed +1540 ms</text>
+<text x="28" y="311" font-size="17">breaker open 5000ms</text>
+<rect x="230" y="288" width="59.5" height="34" fill="#3b82f6"/>
+<text x="297.5" y="311" font-size="16">109</text>
+<text x="640" y="311" font-size="16">rejected after 330 | closed +3330 ms</text>
+<text x="28" y="400" font-size="15">Breaker: last 20 calls, open at 50% failures (min 10), 3 trial calls in HALF_OPEN. Healthy calls take 20 ms.</text>
+<text x="28" y="426" font-size="15">Peak calls in flight was 100 in every run: the first failures are only known after the timeout.</text>
+</g></svg>
