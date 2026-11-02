@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="560" viewBox="0 0 1000 560" role="img" aria-labelledby="title desc">
+<title id="title">p99 latency by connection pool size in front of a 4-core database</title>
+<desc id="desc">800 requests per second, 4 ms query on average, acquire timeout 1000 ms. p99 of completed requests, low median of 20 seeds. Simulated time, not measured latency.</desc>
+<rect width="1000" height="560" fill="#f8fafc"/>
+<g font-family="sans-serif" fill="#0f172a">
+<text x="28" y="42" font-size="26" font-weight="bold">Connection pool size vs p99 latency / 4-core DB, 800 req/s</text>
+<text x="28" y="74" font-size="16">p99 of completed requests (log scale), low median of 20 seeds. Numbers in brackets: acquire timeouts.</text>
+<line x1="110" y1="460.0" x2="930" y2="460.0" stroke="#cbd5e1"/>
+<text x="100" y="465.0" font-size="14" text-anchor="end">10 ms</text>
+<line x1="110" y1="395.7" x2="930" y2="395.7" stroke="#cbd5e1"/>
+<text x="100" y="400.7" font-size="14" text-anchor="end">30 ms</text>
+<line x1="110" y1="325.3" x2="930" y2="325.3" stroke="#cbd5e1"/>
+<text x="100" y="330.3" font-size="14" text-anchor="end">100 ms</text>
+<line x1="110" y1="261.0" x2="930" y2="261.0" stroke="#cbd5e1"/>
+<text x="100" y="266.0" font-size="14" text-anchor="end">300 ms</text>
+<line x1="110" y1="190.6" x2="930" y2="190.6" stroke="#cbd5e1"/>
+<text x="100" y="195.6" font-size="14" text-anchor="end">1000 ms</text>
+<text x="110.0" y="486" font-size="15" text-anchor="middle">2</text>
+<text x="274.0" y="486" font-size="15" text-anchor="middle">4</text>
+<text x="438.0" y="486" font-size="15" text-anchor="middle">8</text>
+<text x="602.0" y="486" font-size="15" text-anchor="middle">16</text>
+<text x="766.0" y="486" font-size="15" text-anchor="middle">32</text>
+<text x="930.0" y="486" font-size="15" text-anchor="middle">64</text>
+<text x="520.0" y="512" font-size="15" text-anchor="middle">pool size (DB has 4 cores)</text>
+<polyline fill="none" stroke="#2563eb" stroke-width="3" points="110.0,189.7 274.0,404.6 438.0,390.5 602.0,378.4 766.0,377.6 930.0,377.6"/>
+<circle cx="110.0" cy="189.7" r="5" fill="#2563eb"/>
+<text x="118.0" y="213.7" font-size="14" fill="#2563eb" text-anchor="start">1015 [2478]</text>
+<circle cx="274.0" cy="404.6" r="5" fill="#2563eb"/>
+<text x="282.0" y="428.6" font-size="14" fill="#2563eb" text-anchor="start">26</text>
+<circle cx="438.0" cy="390.5" r="5" fill="#2563eb"/>
+<text x="446.0" y="414.5" font-size="14" fill="#2563eb" text-anchor="start">33</text>
+<circle cx="602.0" cy="378.4" r="5" fill="#2563eb"/>
+<text x="610.0" y="402.4" font-size="14" fill="#2563eb" text-anchor="start">40</text>
+<circle cx="766.0" cy="377.6" r="5" fill="#2563eb"/>
+<text x="774.0" y="401.6" font-size="14" fill="#2563eb" text-anchor="start">41</text>
+<circle cx="930.0" cy="377.6" r="5" fill="#2563eb"/>
+<text x="922.0" y="401.6" font-size="14" fill="#2563eb" text-anchor="end">41</text>
+<rect x="28" y="98" width="16" height="16" fill="#2563eb"/>
+<text x="50" y="112" font-size="14">A: query only</text>
+<polyline fill="none" stroke="#dc2626" stroke-width="3" points="110.0,189.7 274.0,404.6 438.0,376.6 602.0,308.2 766.0,180.6 930.0,163.7"/>
+<circle cx="110.0" cy="189.7" r="5" fill="#dc2626"/>
+<circle cx="274.0" cy="404.6" r="5" fill="#dc2626"/>
+<circle cx="438.0" cy="376.6" r="5" fill="#dc2626"/>
+<text x="446.0" y="366.6" font-size="14" fill="#dc2626" text-anchor="start">42</text>
+<circle cx="602.0" cy="308.2" r="5" fill="#dc2626"/>
+<text x="610.0" y="298.2" font-size="14" fill="#dc2626" text-anchor="start">134</text>
+<circle cx="766.0" cy="180.6" r="5" fill="#dc2626"/>
+<text x="774.0" y="170.6" font-size="14" fill="#dc2626" text-anchor="start">1185 [848]</text>
+<circle cx="930.0" cy="163.7" r="5" fill="#dc2626"/>
+<text x="922.0" y="153.7" font-size="14" fill="#dc2626" text-anchor="end">1584 [2710]</text>
+<rect x="328" y="98" width="16" height="16" fill="#dc2626"/>
+<text x="350" y="112" font-size="14">A + 2% contention per extra query</text>
+<polyline fill="none" stroke="#16a34a" stroke-width="3" points="110.0,188.4 274.0,188.4 438.0,188.5 602.0,188.6 766.0,355.6 930.0,354.3"/>
+<circle cx="110.0" cy="188.4" r="5" fill="#16a34a"/>
+<text x="118.0" y="178.4" font-size="14" fill="#16a34a" text-anchor="start">1037 [7067]</text>
+<circle cx="274.0" cy="188.4" r="5" fill="#16a34a"/>
+<text x="282.0" y="178.4" font-size="14" fill="#16a34a" text-anchor="start">1037 [6148]</text>
+<circle cx="438.0" cy="188.5" r="5" fill="#16a34a"/>
+<text x="446.0" y="178.5" font-size="14" fill="#16a34a" text-anchor="start">1036 [4324]</text>
+<circle cx="602.0" cy="188.6" r="5" fill="#16a34a"/>
+<text x="610.0" y="178.6" font-size="14" fill="#16a34a" text-anchor="start">1035 [805]</text>
+<circle cx="766.0" cy="355.6" r="5" fill="#16a34a"/>
+<text x="774.0" y="345.6" font-size="14" fill="#16a34a" text-anchor="start">60</text>
+<circle cx="930.0" cy="354.3" r="5" fill="#16a34a"/>
+<text x="922.0" y="344.3" font-size="14" fill="#16a34a" text-anchor="end">61</text>
+<rect x="628" y="98" width="16" height="16" fill="#16a34a"/>
+<text x="650" y="112" font-size="14">B: connection also held 20 ms</text>
+<text x="28" y="538" font-size="14">Queries share the 4 cores (processor sharing). The 2% contention cost is an assumption, not a measurement.</text>
+</g></svg>

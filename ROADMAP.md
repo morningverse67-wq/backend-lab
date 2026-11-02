@@ -31,7 +31,7 @@
 - [x] Rate limiter: fixed window vs exact sliding window log vs token bucket (020)
 - [x] 재시도 + 지수 백오프 + jitter (021)
 - [x] Circuit breaker 상태 전이 (022)
-- [ ] 커넥션 풀 크기와 대기 시간
+- [x] 커넥션 풀 크기와 대기 시간 (023)
 - [ ] 동기 vs 스레드풀 vs asyncio로 I/O 작업 처리
 - [ ] 타임아웃 없는 외부 호출이 서버를 막는 과정
 
