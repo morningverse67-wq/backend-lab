@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="600" viewBox="0 0 1000 600" role="img" aria-labelledby="title desc">
+<title id="title">Time for 100 slow calls: sequential vs thread pool vs asyncio</title>
+<desc id="desc">100 calls to a local server that waits 50 ms. Wall time, low median of 5 runs, log scale.</desc>
+<rect width="1000" height="600" fill="#f8fafc"/>
+<g font-family="sans-serif" fill="#0f172a">
+<text x="28" y="42" font-size="26" font-weight="bold">100 calls to a 50 ms server: total wall time</text>
+<text x="28" y="74" font-size="16">Real elapsed ms on one machine (log scale), low median of 5 runs.</text>
+<rect x="28" y="98" width="16" height="16" fill="#2563eb"/>
+<text x="50" y="112" font-size="14">A: I/O only (server waits 50 ms)</text>
+<rect x="408" y="98" width="16" height="16" fill="#dc2626"/>
+<text x="430" y="112" font-size="14">B: I/O + Python loop of 200,000 steps per call</text>
+<line x1="250.0" y1="144" x2="250.0" y2="528" stroke="#cbd5e1"/>
+<text x="250.0" y="550" font-size="14" text-anchor="middle">10 ms</text>
+<line x1="466.7" y1="144" x2="466.7" y2="528" stroke="#cbd5e1"/>
+<text x="466.7" y="550" font-size="14" text-anchor="middle">100 ms</text>
+<line x1="683.3" y1="144" x2="683.3" y2="528" stroke="#cbd5e1"/>
+<text x="683.3" y="550" font-size="14" text-anchor="middle">1,000 ms</text>
+<line x1="900.0" y1="144" x2="900.0" y2="528" stroke="#cbd5e1"/>
+<text x="900.0" y="550" font-size="14" text-anchor="middle">10,000 ms</text>
+<text x="238" y="172" font-size="15" text-anchor="end">sequential</text>
+<rect x="250" y="150" width="589.9" height="18" fill="#2563eb"/>
+<text x="845.9" y="164" font-size="13" fill="#2563eb">5,282</text>
+<rect x="250" y="170" width="608.9" height="18" fill="#dc2626"/>
+<text x="864.9" y="184" font-size="13" fill="#dc2626">6,464</text>
+<text x="238" y="226" font-size="15" text-anchor="end">thread pool 4</text>
+<rect x="250" y="204" width="460.8" height="18" fill="#2563eb"/>
+<text x="716.8" y="218" font-size="13" fill="#2563eb">1,339</text>
+<rect x="250" y="224" width="493.1" height="18" fill="#dc2626"/>
+<text x="749.1" y="238" font-size="13" fill="#dc2626">1,887</text>
+<text x="238" y="280" font-size="15" text-anchor="end">thread pool 16</text>
+<rect x="250" y="258" width="342.2" height="18" fill="#2563eb"/>
+<text x="598.2" y="272" font-size="13" fill="#2563eb">380</text>
+<rect x="250" y="278" width="388.1" height="18" fill="#dc2626"/>
+<text x="644.1" y="292" font-size="13" fill="#dc2626">619</text>
+<text x="238" y="334" font-size="15" text-anchor="end">thread pool 100</text>
+<rect x="250" y="312" width="169.4" height="18" fill="#2563eb"/>
+<text x="425.4" y="326" font-size="13" fill="#2563eb">60</text>
+<rect x="250" y="332" width="382.0" height="18" fill="#dc2626"/>
+<text x="638.0" y="346" font-size="13" fill="#dc2626">579</text>
+<text x="238" y="388" font-size="15" text-anchor="end">asyncio limit 16</text>
+<rect x="250" y="366" width="343.0" height="18" fill="#2563eb"/>
+<text x="599.0" y="380" font-size="13" fill="#2563eb">383</text>
+<rect x="250" y="386" width="425.5" height="18" fill="#dc2626"/>
+<text x="681.5" y="400" font-size="13" fill="#dc2626">920</text>
+<text x="238" y="442" font-size="15" text-anchor="end">asyncio gather</text>
+<rect x="250" y="420" width="176.6" height="18" fill="#2563eb"/>
+<text x="432.6" y="434" font-size="13" fill="#2563eb">65</text>
+<rect x="250" y="440" width="381.2" height="18" fill="#dc2626"/>
+<text x="637.2" y="454" font-size="13" fill="#dc2626">575</text>
+<text x="238" y="496" font-size="15" text-anchor="end">asyncio + blocking call</text>
+<rect x="250" y="474" width="589.4" height="18" fill="#2563eb"/>
+<text x="845.4" y="488" font-size="13" fill="#2563eb">5,254</text>
+<rect x="250" y="494" width="609.2" height="18" fill="#dc2626"/>
+<text x="865.2" y="508" font-size="13" fill="#dc2626">6,481</text>
+<text x="28" y="578" font-size="14">The server runs in its own process. Python 3.13.12 with the GIL; numbers vary by machine.</text>
+</g></svg>
