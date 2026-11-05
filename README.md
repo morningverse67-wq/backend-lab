@@ -51,6 +51,7 @@ MyBatis + MySQL 버전(Java 21, Maven, Docker)은 [labs/003-mybatis-nplusone](la
 | 023 | [커넥션 풀 크기와 대기 시간](labs/023-connection-pool-size) | 4코어 DB, 초당 800개: 풀 2개는 2,478개가 커넥션 대기 1초 뒤 포기, 4개부터 0개. 그 위로는 대기 장소만 DB로 옮겨 p99 25.80 → 40.86ms. 쿼리 뒤 20ms 더 쥐면 16개도 805개 포기(평균 사용 21.5개) | Python | 후속 글 후보 |
 | 024 | [동기 vs 스레드 풀 vs asyncio](labs/024-sync-threadpool-asyncio) | 50ms 서버에 호출 100번: 순차 5,281.5ms, 스레드 100개 60.5ms, asyncio gather 65.3ms. 같은 동시 수면 비슷(16개: 379.7 vs 383.1ms). `async def` 안 블로킹 호출은 5,254.4ms. CPU 반복문을 붙이면 스레드 100개도 579.2ms | Python | 후속 글 후보 |
 | 025 | [타임아웃 없는 외부 호출](labs/025-external-call-timeout) | 워커 8개, 외부 API가 2초 멈춤: 타임아웃 없으면 상관없는 `/health`도 최대 6,437.2ms, 읽기 타임아웃 200ms면 0.3ms(주문은 202.1ms에 504). 연결 타임아웃만은 6,439.1ms로 같고, 100ms마다 1바이트씩 오면 읽기 타임아웃도 6,564.7ms. 전체 기한을 둬야 끊김 | Python | 후속 글 후보 |
+| 026 | [대용량 CSV: 한 번에 읽기 vs 스트리밍](labs/026-csv-load-vs-streaming) | 주문 40만 행 23.4MB CSV: `list(csv.reader(f))`는 메모리 최대치 +187.2MB(DictReader +245.5MB), 한 행씩 읽으면 +0.1MB에 시간도 201.2 → 152.8ms. 중앙값처럼 값 전체가 필요하면 금액 열만 남겨 +24.8MB | Python | 후속 글 후보 |
 
 다음 주제는 [ROADMAP.md](ROADMAP.md)에.
 
