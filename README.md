@@ -53,6 +53,7 @@ MyBatis + MySQL 버전(Java 21, Maven, Docker)은 [labs/003-mybatis-nplusone](la
 | 025 | [타임아웃 없는 외부 호출](labs/025-external-call-timeout) | 워커 8개, 외부 API가 2초 멈춤: 타임아웃 없으면 상관없는 `/health`도 최대 6,437.2ms, 읽기 타임아웃 200ms면 0.3ms(주문은 202.1ms에 504). 연결 타임아웃만은 6,439.1ms로 같고, 100ms마다 1바이트씩 오면 읽기 타임아웃도 6,564.7ms. 전체 기한을 둬야 끊김 | Python | 후속 글 후보 |
 | 026 | [대용량 CSV: 한 번에 읽기 vs 스트리밍](labs/026-csv-load-vs-streaming) | 주문 40만 행 23.4MB CSV: `list(csv.reader(f))`는 메모리 최대치 +187.2MB(DictReader +245.5MB), 한 행씩 읽으면 +0.1MB에 시간도 201.2 → 152.8ms. 중앙값처럼 값 전체가 필요하면 금액 열만 남겨 +24.8MB | Python | 후속 글 후보 |
 | 027 | [정렬된 두 리스트 병합 vs 해시 조인](labs/027-merge-join-vs-hash-join) | 8만×2만 행 join: 이미 정렬된 입력에서 병합 195.8ms, 해시 57.0ms. 원본 입력을 정렬까지 하면 병합 200.2ms. 두 방식 결과 159,975행 일치 | Python | 후속 글 후보 |
+| 028 | [직렬화 비용: json vs pickle vs struct](labs/028-serialization-json-pickle-struct) | 주문 10만 건: json 9.01MB, pickle 3.07MB, struct 2.10MB(4.29배). zlib 압축 뒤엔 1.50 vs 1.21MB로 1.24배. 필드를 추가하면 옛 struct 코드가 21건을 에러 없이 25건으로 잘못 읽음 | Python | 후속 글 후보 |
 
 다음 주제는 [ROADMAP.md](ROADMAP.md)에.
 
