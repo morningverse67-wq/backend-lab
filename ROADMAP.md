@@ -37,7 +37,7 @@
 
 ## 데이터 처리
 - [x] 대용량 CSV: 한 번에 읽기 vs 스트리밍 (메모리 측정) (026)
-- [ ] 정렬된 두 리스트 병합 vs 해시 조인
+- [x] 정렬된 두 리스트 병합 vs 해시 조인 (027)
 - [ ] 직렬화 비용: json vs pickle vs struct
 - [ ] Bloom filter로 존재 여부 빠르게 거르기
 - [ ] Consistent hashing과 노드 추가 시 키 이동량
