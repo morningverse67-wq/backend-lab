@@ -40,4 +40,4 @@
 - [x] 정렬된 두 리스트 병합 vs 해시 조인 (027)
 - [x] 직렬화 비용: json vs pickle vs struct (028)
 - [x] Bloom filter로 존재 여부 빠르게 거르기 (029)
-- [ ] Consistent hashing과 노드 추가 시 키 이동량
+- [x] Consistent hashing과 노드 추가 시 키 이동량 (030)
