@@ -41,3 +41,6 @@
 - [x] 직렬화 비용: json vs pickle vs struct (028)
 - [x] Bloom filter로 존재 여부 빠르게 거르기 (029)
 - [x] Consistent hashing과 노드 추가 시 키 이동량 (030)
+
+## 메시징
+- [x] Transactional outbox: DB 저장과 이벤트 발행의 유실·유령·중복 (031)

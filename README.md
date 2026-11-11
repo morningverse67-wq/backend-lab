@@ -56,6 +56,7 @@ MyBatis + MySQL 버전(Java 21, Maven, Docker)은 [labs/003-mybatis-nplusone](la
 | 028 | [직렬화 비용: json vs pickle vs struct](labs/028-serialization-json-pickle-struct) | 주문 10만 건: json 9.01MB, pickle 3.07MB, struct 2.10MB(4.29배). zlib 압축 뒤엔 1.50 vs 1.21MB로 1.24배. 필드를 추가하면 옛 struct 코드가 21건을 에러 없이 25건으로 잘못 읽음 | Python | 후속 글 후보 |
 | 029 | [Bloom filter로 존재 여부 거르기](labs/029-bloom-filter) | 키 10만 개를 125KB(키당 10비트)에 넣자 90%가 없는 키인 조회 10만 건 중 저장소까지 간 조회가 10,728건. 오탐률 0.84%(공식 0.82%), 놓친 키 0. 2배를 넣으면 오탐률 13.88%, 비트를 지워 키 100개를 삭제하면 남은 키 486개가 '없음' | Python | 후속 글 후보 |
 | 030 | [Consistent hashing과 키 이동량](labs/030-consistent-hashing) | 키 10만 개, 노드 10→11대: `hash % N`은 90.89%가 옮겨졌고, 가상 노드 100개 해시 링은 9.27%(이상값 9.09%)만 새 노드로. 가상 노드 없이 점 하나면 가장 바쁜 노드가 평균의 3.72배 | Python | 후속 글 후보 |
+| 031 | [Transactional outbox](labs/031-transactional-outbox) | 주문 1만 건, 단계 사이 죽기 2%: 커밋 후 발행은 이벤트 197건 유실, 발행 후 커밋은 없는 주문 이벤트 317건. outbox는 유실·유령 0, 대신 216건 중복이라 소비자가 이벤트 id로 걸러 9,905건 처리 | Python | 후속 글 후보 |
 
 다음 주제는 [ROADMAP.md](ROADMAP.md)에.
 
