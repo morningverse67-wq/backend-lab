@@ -58,6 +58,7 @@ MyBatis + MySQL 버전(Java 21, Maven, Docker)은 [labs/003-mybatis-nplusone](la
 | 030 | [Consistent hashing과 키 이동량](labs/030-consistent-hashing) | 키 10만 개, 노드 10→11대: `hash % N`은 90.89%가 옮겨졌고, 가상 노드 100개 해시 링은 9.27%(이상값 9.09%)만 새 노드로. 가상 노드 없이 점 하나면 가장 바쁜 노드가 평균의 3.72배 | Python | 후속 글 후보 |
 | 031 | [Transactional outbox](labs/031-transactional-outbox) | 주문 1만 건, 단계 사이 죽기 2%: 커밋 후 발행은 이벤트 197건 유실, 발행 후 커밋은 없는 주문 이벤트 317건. outbox는 유실·유령 0, 대신 216건 중복이라 소비자가 이벤트 id로 걸러 9,905건 처리 | Python | 후속 글 후보 |
 | 032 | [멱등 소비자(inbox)](labs/032-idempotent-consumer) | 이벤트 1만 건, 재전송 3%·반영 뒤 죽기 2%: 그냥 반영 548건 초과, 반영 후 id 따로 기록 223건 초과, inbox와 반영을 한 트랜잭션에 넣으면 0 | Python | 후속 글 후보 |
+| 033 | [Dead letter queue](labs/033-dead-letter-queue) | 메시지 1만 건 중 poison 129건, 시도 한도 12,000번: 제자리 무한 재시도는 정상 메시지 38건만 처리, 최대 3번 시도 뒤 DLQ는 정상 9,871건 모두 처리하고 DLQ에는 poison 129건만 | Python | 후속 글 후보 |
 
 다음 주제는 [ROADMAP.md](ROADMAP.md)에.
 

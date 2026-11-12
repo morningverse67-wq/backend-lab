@@ -45,3 +45,4 @@
 ## 메시징
 - [x] Transactional outbox: DB 저장과 이벤트 발행의 유실·유령·중복 (031)
 - [x] 멱등 소비자(inbox): 중복 이벤트를 한 번만 반영 (032)
+- [x] Dead letter queue: poison 메시지가 큐를 막지 않게 하기 (033)
