@@ -59,6 +59,7 @@ MyBatis + MySQL 버전(Java 21, Maven, Docker)은 [labs/003-mybatis-nplusone](la
 | 031 | [Transactional outbox](labs/031-transactional-outbox) | 주문 1만 건, 단계 사이 죽기 2%: 커밋 후 발행은 이벤트 197건 유실, 발행 후 커밋은 없는 주문 이벤트 317건. outbox는 유실·유령 0, 대신 216건 중복이라 소비자가 이벤트 id로 걸러 9,905건 처리 | Python | 후속 글 후보 |
 | 032 | [멱등 소비자(inbox)](labs/032-idempotent-consumer) | 이벤트 1만 건, 재전송 3%·반영 뒤 죽기 2%: 그냥 반영 548건 초과, 반영 후 id 따로 기록 223건 초과, inbox와 반영을 한 트랜잭션에 넣으면 0 | Python | 후속 글 후보 |
 | 033 | [Dead letter queue](labs/033-dead-letter-queue) | 메시지 1만 건 중 poison 129건, 시도 한도 12,000번: 제자리 무한 재시도는 정상 메시지 38건만 처리, 최대 3번 시도 뒤 DLQ는 정상 9,871건 모두 처리하고 DLQ에는 poison 129건만 | Python | 후속 글 후보 |
+| 034 | [UPSERT](labs/034-upsert-on-conflict) | 같은 새 키에 동시 요청 1,000쌍: 조회 후 쓰기는 중복 키 오류 1,000번·증가분 1,000 사라짐, ON CONFLICT는 0이고 10만 건 98ms 대 45ms | Python | 후속 글 후보 |
 
 다음 주제는 [ROADMAP.md](ROADMAP.md)에.
 

@@ -12,7 +12,7 @@
 - [x] 커버링 인덱스 (007)
 - [x] 대량 INSERT: 한 건씩 vs executemany vs 트랜잭션 묶기 (008)
 - [x] COUNT(*) 비용과 대안 (009)
-- [ ] UPSERT: 조회 후 INSERT vs `INSERT ... ON CONFLICT`
+- [x] UPSERT: 조회 후 INSERT vs `INSERT ... ON CONFLICT` (034)
 - [ ] Soft delete와 부분 인덱스(partial index)
 
 ## 트랜잭션 / 동시성
@@ -54,3 +54,4 @@
 - [x] Dead letter queue: poison 메시지가 큐를 막지 않게 하기 (033)
 - [ ] 파티션 키와 메시지 순서: 병렬 소비자에서 순서가 바뀌는 건수
 - [ ] Backpressure: 무한 큐 vs 유한 큐의 메모리와 지연
+- [ ] 메시지 재처리(replay): DLQ에 쌓인 메시지를 다시 넣을 때 중복과 순서

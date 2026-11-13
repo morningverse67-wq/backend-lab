@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="400" viewBox="0 0 900 400" role="img" aria-labelledby="t d">
+<title id="t">Two concurrent requests on a new key: check-then-write vs ON CONFLICT</title>
+<desc id="d">1,000 pairs of concurrent requests on the same new key, and 100,000 requests for speed (median of 5 runs).</desc>
+<rect width="900" height="400" fill="#f8fafc"/><g font-family="sans-serif" fill="#0f172a">
+<text x="28" y="40" font-size="24" font-weight="bold">Upsert: 1,000 concurrent pairs on a new key</text>
+<text x="28" y="80" font-size="16" font-weight="bold">Duplicate-key errors</text>
+<text x="28" y="107" font-size="14">Check, then INSERT/UPDATE</text>
+<rect x="270" y="92" width="480.0" height="20" fill="#dc2626"/>
+<text x="756.0" y="107" font-size="14" fill="#dc2626">1,000</text>
+<text x="28" y="137" font-size="14">INSERT ... ON CONFLICT</text>
+<rect x="270" y="122" width="0.0" height="20" fill="#2563eb"/>
+<text x="276.0" y="137" font-size="14" fill="#2563eb">0</text>
+<text x="28" y="180" font-size="16" font-weight="bold">Lost increments</text>
+<text x="28" y="207" font-size="14">Check, then INSERT/UPDATE</text>
+<rect x="270" y="192" width="480.0" height="20" fill="#dc2626"/>
+<text x="756.0" y="207" font-size="14" fill="#dc2626">1,000</text>
+<text x="28" y="237" font-size="14">INSERT ... ON CONFLICT</text>
+<rect x="270" y="222" width="0.0" height="20" fill="#2563eb"/>
+<text x="276.0" y="237" font-size="14" fill="#2563eb">0</text>
+<text x="28" y="280" font-size="16" font-weight="bold">ms for 100,000 requests</text>
+<text x="28" y="307" font-size="14">Check, then INSERT/UPDATE</text>
+<rect x="270" y="292" width="480.0" height="20" fill="#dc2626"/>
+<text x="756.0" y="307" font-size="14" fill="#dc2626">98</text>
+<text x="28" y="337" font-size="14">INSERT ... ON CONFLICT</text>
+<rect x="270" y="322" width="218.6" height="20" fill="#2563eb"/>
+<text x="494.6" y="337" font-size="14" fill="#2563eb">45</text>
+<text x="28" y="384" font-size="13">Python 3.13.12, SQLite 3.50.4; speed varies by machine.</text></g></svg>
