@@ -13,7 +13,8 @@
 - [x] 대량 INSERT: 한 건씩 vs executemany vs 트랜잭션 묶기 (008)
 - [x] COUNT(*) 비용과 대안 (009)
 - [x] UPSERT: 조회 후 INSERT vs `INSERT ... ON CONFLICT` (034)
-- [ ] Soft delete와 부분 인덱스(partial index)
+- [x] Soft delete와 부분 인덱스(partial index) (035)
+- [ ] 정렬 인덱스로 ORDER BY ... LIMIT의 정렬 단계 없애기
 
 ## 트랜잭션 / 동시성
 - [x] Lost update 재현과 낙관적 락(version 컬럼) (010)
