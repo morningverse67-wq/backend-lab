@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="360" viewBox="0 0 900 360" role="img" aria-labelledby="t d">
+<title id="t">ORDER BY created_at DESC LIMIT 20: index without vs with the sort column</title>
+<desc id="d">200,000 orders, 200 users. INDEX(user_id) needs a temp B-tree sort; INDEX(user_id, created_at) does not.</desc>
+<rect width="900" height="360" fill="#f8fafc"/><g font-family="sans-serif" fill="#0f172a">
+<text x="28" y="40" font-size="24" font-weight="bold">Latest 20 orders of one user (200,000 rows)</text>
+<text x="28" y="90" font-size="16" font-weight="bold">SQLite VM steps for one request</text>
+<text x="28" y="117" font-size="13">INDEX(user_id) (temp sort)</text>
+<rect x="330" y="102" width="420.0" height="20" fill="#dc2626"/>
+<text x="756.0" y="117" font-size="14" fill="#dc2626">8,295</text>
+<text x="28" y="147" font-size="13">INDEX(user_id, created_at) (no sort)</text>
+<rect x="330" y="132" width="6.7" height="20" fill="#2563eb"/>
+<text x="342.7" y="147" font-size="14" fill="#2563eb">133</text>
+<text x="28" y="200" font-size="16" font-weight="bold">ms for 1,000 requests (median of 5)</text>
+<text x="28" y="227" font-size="13">INDEX(user_id) (temp sort)</text>
+<rect x="330" y="212" width="420.0" height="20" fill="#dc2626"/>
+<text x="756.0" y="227" font-size="14" fill="#dc2626">192.8</text>
+<text x="28" y="257" font-size="13">INDEX(user_id, created_at) (no sort)</text>
+<rect x="330" y="242" width="9.8" height="20" fill="#2563eb"/>
+<text x="345.8" y="257" font-size="14" fill="#2563eb">4.5</text>
+<text x="28" y="344" font-size="13">Python 3.13.12, SQLite 3.50.4; time varies by machine.</text></g></svg>

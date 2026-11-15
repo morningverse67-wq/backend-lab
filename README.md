@@ -61,6 +61,7 @@ MyBatis + MySQL 버전(Java 21, Maven, Docker)은 [labs/003-mybatis-nplusone](la
 | 033 | [Dead letter queue](labs/033-dead-letter-queue) | 메시지 1만 건 중 poison 129건, 시도 한도 12,000번: 제자리 무한 재시도는 정상 메시지 38건만 처리, 최대 3번 시도 뒤 DLQ는 정상 9,871건 모두 처리하고 DLQ에는 poison 129건만 | Python | 후속 글 후보 |
 | 034 | [UPSERT](labs/034-upsert-on-conflict) | 같은 새 키에 동시 요청 1,000쌍: 조회 후 쓰기는 중복 키 오류 1,000번·증가분 1,000 사라짐, ON CONFLICT는 0이고 10만 건 98ms 대 45ms | Python | 후속 글 후보 |
 | 035 | [Soft delete와 부분 인덱스](labs/035-soft-delete-partial-index) | 회원 10만 행 중 9만 행 삭제: 전체 UNIQUE는 탈퇴 이메일 재가입 1,000번 모두 오류·인덱스 757페이지, `WHERE deleted_at IS NULL` 부분 UNIQUE는 재가입 오류 0·활동 중 중복 1,000번은 모두 막고 74페이지 | Python | 후속 글 후보 |
+| 036 | [ORDER BY ... LIMIT 정렬 인덱스](labs/036-order-by-limit-index) | 주문 20만 행, 회원 한 명의 최근 20건: `INDEX(user_id)`는 임시 B-tree 정렬·요청 1번 VM 8,295단계·1,000번 192.8ms, `INDEX(user_id, created_at)`는 정렬 없음·133단계·4.5ms | Python | 후속 글 후보 |
 
 다음 주제는 [ROADMAP.md](ROADMAP.md)에.
 

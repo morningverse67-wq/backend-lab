@@ -14,7 +14,8 @@
 - [x] COUNT(*) 비용과 대안 (009)
 - [x] UPSERT: 조회 후 INSERT vs `INSERT ... ON CONFLICT` (034)
 - [x] Soft delete와 부분 인덱스(partial index) (035)
-- [ ] 정렬 인덱스로 ORDER BY ... LIMIT의 정렬 단계 없애기
+- [x] 정렬 인덱스로 ORDER BY ... LIMIT의 정렬 단계 없애기 (036)
+- [ ] 긴 트랜잭션이 막는 정리 작업: 오래 열린 읽기가 남기는 옛 버전 행
 
 ## 트랜잭션 / 동시성
 - [x] Lost update 재현과 낙관적 락(version 컬럼) (010)
