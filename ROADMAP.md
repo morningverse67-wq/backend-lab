@@ -16,7 +16,7 @@
 - [x] Soft delete와 부분 인덱스(partial index) (035)
 - [x] 정렬 인덱스로 ORDER BY ... LIMIT의 정렬 단계 없애기 (036)
 - [x] 긴 트랜잭션이 막는 정리 작업: 오래 열린 읽기가 남기는 옛 버전 행 (037)
-- [ ] 대량 DELETE 뒤 파일 크기: freelist와 VACUUM
+- [x] 대량 DELETE 뒤 파일 크기: freelist와 VACUUM (038)
 
 ## 트랜잭션 / 동시성
 - [x] Lost update 재현과 낙관적 락(version 컬럼) (010)
@@ -33,6 +33,7 @@
 - [x] TTL + jitter로 동시 만료 피하기 (018)
 - [x] Write-through vs write-behind vs cache-aside (019)
 - [ ] Negative caching: 없는 키 조회가 저장소까지 가는 횟수 줄이기
+- [ ] 캐시 워밍업: 재시작 직후 적중률과 저장소 부하
 
 ## API / 서버
 - [x] Rate limiter: fixed window vs exact sliding window log vs token bucket (020)

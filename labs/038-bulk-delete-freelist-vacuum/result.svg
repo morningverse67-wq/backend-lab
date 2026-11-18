@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="380" viewBox="0 0 900 380" role="img" aria-labelledby="t d">
+<title id="t">Database file size before and after deleting 90% of rows</title>
+<desc id="d">200,000 rows, 180,000 deleted. DELETE only stays 27.70 MB; VACUUM 2.77 MB.</desc>
+<rect width="900" height="380" fill="#f8fafc"/><g font-family="sans-serif" fill="#0f172a">
+<text x="28" y="40" font-size="22" font-weight="bold">File size (MB) after deleting 180,000 of 200,000 rows</text>
+<line x1="90" y1="290" x2="850" y2="290" stroke="#94a3b8"/>
+<rect x="120.0" y="70.3" width="60" height="219.7" fill="#94a3b8"/>
+<text x="150.0" y="64.3" font-size="12" text-anchor="middle">27.70</text>
+<rect x="186.0" y="70.3" width="60" height="219.7" fill="#f59e0b"/>
+<text x="216.0" y="64.3" font-size="12" text-anchor="middle">27.70</text>
+<rect x="252.0" y="70.3" width="60" height="219.7" fill="#2563eb"/>
+<text x="282.0" y="64.3" font-size="12" text-anchor="middle">27.70</text>
+<text x="216.0" y="312" font-size="13" text-anchor="middle">DELETE only</text>
+<rect x="373.3" y="70.3" width="60" height="219.7" fill="#94a3b8"/>
+<text x="403.3" y="64.3" font-size="12" text-anchor="middle">27.70</text>
+<rect x="439.3" y="70.3" width="60" height="219.7" fill="#f59e0b"/>
+<text x="469.3" y="64.3" font-size="12" text-anchor="middle">27.70</text>
+<rect x="505.3" y="268.0" width="60" height="22.0" fill="#2563eb"/>
+<text x="535.3" y="262.0" font-size="12" text-anchor="middle">2.77</text>
+<text x="469.3" y="312" font-size="13" text-anchor="middle">DELETE + VACUUM</text>
+<rect x="626.7" y="70.0" width="60" height="220.0" fill="#94a3b8"/>
+<text x="656.7" y="64.0" font-size="12" text-anchor="middle">27.74</text>
+<rect x="692.7" y="70.0" width="60" height="220.0" fill="#f59e0b"/>
+<text x="722.7" y="64.0" font-size="12" text-anchor="middle">27.74</text>
+<rect x="758.7" y="267.7" width="60" height="22.3" fill="#2563eb"/>
+<text x="788.7" y="261.7" font-size="12" text-anchor="middle">2.81</text>
+<text x="722.7" y="312" font-size="13" text-anchor="middle">auto_vacuum=INCREMENTAL</text>
+<rect x="90" y="328" width="14" height="14" fill="#94a3b8"/><text x="110" y="340" font-size="13">before DELETE</text>
+<rect x="290" y="328" width="14" height="14" fill="#f59e0b"/><text x="310" y="340" font-size="13">after DELETE</text>
+<rect x="490" y="328" width="14" height="14" fill="#2563eb"/><text x="510" y="340" font-size="13">after cleanup step</text>
+<text x="28" y="366" font-size="13">Python 3.13.12, SQLite 3.50.4, page 4096.</text></g></svg>
