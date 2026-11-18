@@ -64,6 +64,7 @@ MyBatis + MySQL 버전(Java 21, Maven, Docker)은 [labs/003-mybatis-nplusone](la
 | 036 | [ORDER BY ... LIMIT 정렬 인덱스](labs/036-order-by-limit-index) | 주문 20만 행, 회원 한 명의 최근 20건: `INDEX(user_id)`는 임시 B-tree 정렬·요청 1번 VM 8,295단계·1,000번 192.8ms, `INDEX(user_id, created_at)`는 정렬 없음·133단계·4.5ms | Python | 후속 글 후보 |
 | 037 | [긴 트랜잭션이 막는 정리 작업](labs/037-long-transaction-wal-growth) | 1만 행에 1,000건씩 20번 UPDATE: 긴 읽기 없음은 정리 실패 0/20·WAL 0 MB, 긴 읽기를 열어 두면 20/20 실패·WAL 17.65 MB, 닫으면 다음 정리에서 0 MB | Python | 후속 글 후보 |
 | 038 | [대량 DELETE 뒤 파일 크기](labs/038-bulk-delete-freelist-vacuum) | 로그 20만 행 중 18만 행 DELETE: 파일은 27.70 MB 그대로·빈 페이지 6,373개, 다시 넣으면 빈 페이지 재사용(27.91 MB), `VACUUM` 2.77 MB, `incremental_vacuum` 2.81 MB | Python | 후속 글 후보 |
+| 039 | [분산 락 lease 초과와 fencing token](labs/039-lease-lock-fencing-token) | 작업자 8명이 임대 30 ms 락으로 1만 번 증가: 임대 락만 9,756(244 잃음), fencing token을 저장소가 확인하면 늦은 쓰기 216건 거절·재시도로 10,000 | Python | 후속 글 후보 |
 
 다음 주제는 [ROADMAP.md](ROADMAP.md)에.
 

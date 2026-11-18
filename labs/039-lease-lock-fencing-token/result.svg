@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="380" viewBox="0 0 900 380" role="img" aria-labelledby="t d">
+<title id="t">Final counter after 10,000 increments under a lease lock</title>
+<desc id="d">no lock 1,231; lease only 9,756; with fencing token 10,000.</desc>
+<rect width="900" height="380" fill="#f8fafc"/><g font-family="sans-serif" fill="#0f172a">
+<text x="28" y="40" font-size="22" font-weight="bold">Final counter after 10,000 increments (lease 30 ms, 8 clients)</text>
+<line x1="90" y1="290" x2="850" y2="290" stroke="#94a3b8"/>
+<rect x="156.7" y="262.9" width="120" height="27.1" fill="#94a3b8"/>
+<text x="216.7" y="256.9" font-size="13" text-anchor="middle">1,231 (lost 8,769)</text>
+<text x="216.7" y="312" font-size="13" text-anchor="middle">no lock</text>
+<rect x="410.0" y="75.4" width="120" height="214.6" fill="#f59e0b"/>
+<text x="470.0" y="69.4" font-size="13" text-anchor="middle">9,756 (lost 244)</text>
+<text x="470.0" y="312" font-size="13" text-anchor="middle">lease lock only</text>
+<rect x="663.3" y="70.0" width="120" height="220.0" fill="#2563eb"/>
+<text x="723.3" y="64.0" font-size="13" text-anchor="middle">10,000 (lost 0)</text>
+<text x="723.3" y="312" font-size="13" text-anchor="middle">lease lock + fencing token</text>
+<text x="28" y="340" font-size="13">Fencing token: 216 stale writes rejected and retried. Lease-only: 1,353 times two clients held the lock.</text>
+<text x="28" y="366" font-size="13">Python 3.13.12, simulated time, seed 39.</text></g></svg>

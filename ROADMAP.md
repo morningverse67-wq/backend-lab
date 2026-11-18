@@ -25,7 +25,8 @@
 - [x] 트랜잭션 격리 수준별 현상 (dirty/non-repeatable/phantom) (013)
 - [x] 멱등성 키로 중복 결제 요청 막기 (014)
 - [x] 데드락 재현과 락 순서 고정 (015)
-- [ ] 분산 락의 임대 시간(lease) 초과와 fencing token
+- [x] 분산 락의 임대 시간(lease) 초과와 fencing token (039)
+- [ ] Saga 보상 처리: 중간 단계 실패 시 되돌린 건수와 남은 불일치
 
 ## 캐시
 - [x] 캐시 없음 vs LRU 캐시 응답 시간 (016)
