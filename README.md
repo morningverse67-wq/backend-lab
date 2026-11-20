@@ -66,6 +66,7 @@ MyBatis + MySQL 버전(Java 21, Maven, Docker)은 [labs/003-mybatis-nplusone](la
 | 038 | [대량 DELETE 뒤 파일 크기](labs/038-bulk-delete-freelist-vacuum) | 로그 20만 행 중 18만 행 DELETE: 파일은 27.70 MB 그대로·빈 페이지 6,373개, 다시 넣으면 빈 페이지 재사용(27.91 MB), `VACUUM` 2.77 MB, `incremental_vacuum` 2.81 MB | Python | 후속 글 후보 |
 | 039 | [분산 락 lease 초과와 fencing token](labs/039-lease-lock-fencing-token) | 작업자 8명이 임대 30 ms 락으로 1만 번 증가: 임대 락만 9,756(244 잃음), fencing token을 저장소가 확인하면 늦은 쓰기 216건 거절·재시도로 10,000 | Python | 후속 글 후보 |
 | 040 | [Saga 보상 처리](labs/040-saga-compensation) | 주문 1만 건 중 1,148건 실패: 보상 없으면 1,181건 어긋남, 1번만 시도 73건, 재시도는 중복 반영 61건, 멱등 키 재시도는 0건 | Python | 후속 글 후보 |
+| 041 | [Read replica 지연](labs/041-read-replica-lag) | 쓰기 1만 건 직후 읽기: 항상 replica는 1,873건(18.73%) 옛 값, 쓴 뒤 1초 primary는 0건·primary 읽기 20.0%, 반영 위치 확인은 0건·3.7% | Python | 후속 글 후보 |
 
 다음 주제는 [ROADMAP.md](ROADMAP.md)에.
 
