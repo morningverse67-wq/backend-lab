@@ -34,8 +34,9 @@
 - [x] Cache stampede와 single-flight (017)
 - [x] TTL + jitter로 동시 만료 피하기 (018)
 - [x] Write-through vs write-behind vs cache-aside (019)
-- [ ] Negative caching: 없는 키 조회가 저장소까지 가는 횟수 줄이기
+- [x] Negative caching: 없는 키 조회가 저장소까지 가는 횟수 줄이기 (042)
 - [ ] 캐시 워밍업: 재시작 직후 적중률과 저장소 부하
+- [ ] 2단계 캐시(로컬 + 분산): 적중 위치별 응답 시간과 서버 간 값 불일치
 
 ## API / 서버
 - [x] Rate limiter: fixed window vs exact sliding window log vs token bucket (020)

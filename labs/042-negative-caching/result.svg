@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="380" viewBox="0 0 900 380" role="img" aria-labelledby="t d">
+<title id="t">Store lookups for missing keys</title>
+<desc id="d">no negative cache 30,071 store lookups, 0 wrong not-found answers; TTL 5 s 18,257 store lookups, 5 wrong not-found answers; TTL 30 s 9,784 store lookups, 61 wrong not-found answers; TTL 30 s + invalidate 9,845 store lookups, 0 wrong not-found answers.</desc>
+<rect width="900" height="380" fill="#f8fafc"/><g font-family="sans-serif" fill="#0f172a">
+<text x="28" y="40" font-size="22" font-weight="bold">Store lookups for missing keys (30,071 requests)</text>
+<line x1="90" y1="290" x2="850" y2="290" stroke="#94a3b8"/>
+<rect x="135.0" y="70.0" width="100" height="220.0" fill="#ef4444"/>
+<text x="185.0" y="64.0" font-size="13" text-anchor="middle">30,071</text>
+<text x="185.0" y="312" font-size="12" text-anchor="middle">no negative cache</text>
+<text x="185.0" y="330" font-size="12" text-anchor="middle">wrong answers 0</text>
+<rect x="325.0" y="156.4" width="100" height="133.6" fill="#f59e0b"/>
+<text x="375.0" y="150.4" font-size="13" text-anchor="middle">18,257</text>
+<text x="375.0" y="312" font-size="12" text-anchor="middle">TTL 5 s</text>
+<text x="375.0" y="330" font-size="12" text-anchor="middle">wrong answers 5</text>
+<rect x="515.0" y="218.4" width="100" height="71.6" fill="#2563eb"/>
+<text x="565.0" y="212.4" font-size="13" text-anchor="middle">9,784</text>
+<text x="565.0" y="312" font-size="12" text-anchor="middle">TTL 30 s</text>
+<text x="565.0" y="330" font-size="12" text-anchor="middle">wrong answers 61</text>
+<rect x="705.0" y="218.0" width="100" height="72.0" fill="#16a34a"/>
+<text x="755.0" y="212.0" font-size="13" text-anchor="middle">9,845</text>
+<text x="755.0" y="312" font-size="12" text-anchor="middle">TTL 30 s + invalidate</text>
+<text x="755.0" y="330" font-size="12" text-anchor="middle">wrong answers 0</text>
+<text x="28" y="340" font-size="13">Wrong answer = cache said "not found" for a key that had been created in the meantime.</text>
+<text x="28" y="366" font-size="13">Python 3.13.12, seeded simulation (seed 42).</text></g></svg>
