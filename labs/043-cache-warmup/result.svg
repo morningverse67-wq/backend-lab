@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="380" viewBox="0 0 900 380" role="img" aria-labelledby="t d">
+<title id="t">Store lookups in the first 10 seconds after restart</title>
+<desc id="d">no warm-up 2,146 store lookups, hit rate 78.5%; warm 500 keys 1,674 store lookups, hit rate 83.3%; warm 2,000 keys 1,596 store lookups, hit rate 84.0%.</desc>
+<rect width="900" height="380" fill="#f8fafc"/><g font-family="sans-serif" fill="#0f172a">
+<text x="28" y="40" font-size="22" font-weight="bold">Store lookups in the first 10 s after restart</text>
+<line x1="90" y1="290" x2="850" y2="290" stroke="#94a3b8"/>
+<rect x="156.7" y="70.0" width="120" height="220.0" fill="#ef4444"/>
+<text x="216.7" y="64.0" font-size="13" text-anchor="middle">2,146</text>
+<text x="216.7" y="312" font-size="12" text-anchor="middle">no warm-up</text>
+<text x="216.7" y="330" font-size="12" text-anchor="middle">hit rate 78.5%</text>
+<rect x="410.0" y="118.4" width="120" height="171.6" fill="#f59e0b"/>
+<text x="470.0" y="112.4" font-size="13" text-anchor="middle">1,674</text>
+<text x="470.0" y="312" font-size="12" text-anchor="middle">warm 500 keys</text>
+<text x="470.0" y="330" font-size="12" text-anchor="middle">hit rate 83.3%</text>
+<rect x="663.3" y="126.4" width="120" height="163.6" fill="#16a34a"/>
+<text x="723.3" y="120.4" font-size="13" text-anchor="middle">1,596</text>
+<text x="723.3" y="312" font-size="12" text-anchor="middle">warm 2,000 keys</text>
+<text x="723.3" y="330" font-size="12" text-anchor="middle">hit rate 84.0%</text>
+<text x="28" y="340" font-size="13">First 10 s = 10,000 requests of 100,000; LRU cache 2,000 of 10,000 keys.</text>
+<text x="28" y="366" font-size="13">Python 3.13.12, seeded simulation (seed 42).</text></g></svg>

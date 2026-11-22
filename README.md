@@ -68,6 +68,7 @@ MyBatis + MySQL 버전(Java 21, Maven, Docker)은 [labs/003-mybatis-nplusone](la
 | 040 | [Saga 보상 처리](labs/040-saga-compensation) | 주문 1만 건 중 1,148건 실패: 보상 없으면 1,181건 어긋남, 1번만 시도 73건, 재시도는 중복 반영 61건, 멱등 키 재시도는 0건 | Python | 후속 글 후보 |
 | 041 | [Read replica 지연](labs/041-read-replica-lag) | 쓰기 1만 건 직후 읽기: 항상 replica는 1,873건(18.73%) 옛 값, 쓴 뒤 1초 primary는 0건·primary 읽기 20.0%, 반영 위치 확인은 0건·3.7% | Python | 후속 글 후보 |
 | 042 | [Negative caching](labs/042-negative-caching) | 없는 키 조회 3만 71건: 매번 저장소는 3만 71번, TTL 5초는 1만 8,257번(39.3% 절감)·틀린 "없음" 5건, TTL 30초는 9,784번(67.5%)·61건, 만들 때 지우면 0건 | Python | 후속 글 후보 |
+| 043 | [캐시 워밍업](labs/043-cache-warmup) | 재시작 직후 10초(요청 1만 건): 워밍업 없으면 적중률 78.5%·저장소 2,146번, 인기 키 500개 미리 채우면 83.3%·1,674번(22.0% 감소), 2,000개는 84.0%·1,596번이지만 전체 조회는 17,341번 | Python | 후속 글 후보 |
 
 다음 주제는 [ROADMAP.md](ROADMAP.md)에.
 
