@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="380" viewBox="0 0 900 380" role="img" aria-labelledby="t d">
+<title id="t">Average read latency and stale reads, two-level cache</title>
+<desc id="d">remote only 1.090 ms average, 0 stale reads (0.00%); local TTL 1 s 0.506 ms average, 17,488 stale reads (17.85%); local TTL 10 s 0.291 ms average, 39,802 stale reads (40.62%).</desc>
+<rect width="900" height="380" fill="#f8fafc"/><g font-family="sans-serif" fill="#0f172a">
+<text x="28" y="40" font-size="22" font-weight="bold">Average read latency (ms) and stale reads</text>
+<line x1="90" y1="290" x2="850" y2="290" stroke="#94a3b8"/>
+<rect x="156.7" y="70.0" width="120" height="220.0" fill="#ef4444"/>
+<text x="216.7" y="64.0" font-size="13" text-anchor="middle">1.090 ms</text>
+<text x="216.7" y="312" font-size="12" text-anchor="middle">remote only</text>
+<text x="216.7" y="330" font-size="12" text-anchor="middle">stale 0 (0.00%)</text>
+<rect x="410.0" y="187.9" width="120" height="102.1" fill="#f59e0b"/>
+<text x="470.0" y="181.9" font-size="13" text-anchor="middle">0.506 ms</text>
+<text x="470.0" y="312" font-size="12" text-anchor="middle">local TTL 1 s</text>
+<text x="470.0" y="330" font-size="12" text-anchor="middle">stale 17,488 (17.85%)</text>
+<rect x="663.3" y="231.2" width="120" height="58.8" fill="#16a34a"/>
+<text x="723.3" y="225.2" font-size="13" text-anchor="middle">0.291 ms</text>
+<text x="723.3" y="312" font-size="12" text-anchor="middle">local TTL 10 s</text>
+<text x="723.3" y="330" font-size="12" text-anchor="middle">stale 39,802 (40.62%)</text>
+<text x="28" y="340" font-size="13">100,000 requests, 4 servers, 2% writes; local 0.05 ms, remote 1.0 ms, store 10.0 ms (assumed).</text>
+<text x="28" y="366" font-size="13">Python 3.13.12, seeded simulation (seed 42).</text></g></svg>

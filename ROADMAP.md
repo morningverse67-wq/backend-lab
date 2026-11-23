@@ -36,8 +36,9 @@
 - [x] Write-through vs write-behind vs cache-aside (019)
 - [x] Negative caching: 없는 키 조회가 저장소까지 가는 횟수 줄이기 (042)
 - [x] 캐시 워밍업: 재시작 직후 적중률과 저장소 부하 (043)
-- [ ] 2단계 캐시(로컬 + 분산): 적중 위치별 응답 시간과 서버 간 값 불일치
+- [x] 2단계 캐시(로컬 + 분산): 적중 위치별 응답 시간과 서버 간 값 불일치 (044)
 - [ ] Cache-aside 갱신 경쟁: 늦게 도착한 옛 값이 새 값을 덮어쓰는 건수와 버전 확인
+- [ ] 캐시 키 버전 접두어: 한 번에 무효화할 때 삭제 요청 수와 옛 키가 남는 양
 
 ## API / 서버
 - [x] Rate limiter: fixed window vs exact sliding window log vs token bucket (020)
