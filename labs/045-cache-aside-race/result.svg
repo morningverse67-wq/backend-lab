@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="380" viewBox="0 0 900 380" role="img" aria-labelledby="t d">
+<title id="t">Stale cache entries after a read-miss and write race</title>
+<desc id="d">plain delete 20,466 stale of 100,000; double delete 20,466 stale of 100,000; versioned set 0 stale of 100,000.</desc>
+<rect width="900" height="380" fill="#f8fafc"/><g font-family="sans-serif" fill="#0f172a">
+<text x="28" y="40" font-size="22" font-weight="bold">Stale cache entries after a read-miss and write race</text>
+<line x1="90" y1="290" x2="850" y2="290" stroke="#94a3b8"/>
+<rect x="156.7" y="70.0" width="120" height="220.0" fill="#ef4444"/>
+<text x="216.7" y="64.0" font-size="13" text-anchor="middle">20,466</text>
+<text x="216.7" y="312" font-size="12" text-anchor="middle">plain delete</text>
+<text x="216.7" y="330" font-size="12" text-anchor="middle">of 100,000 races</text>
+<rect x="410.0" y="70.0" width="120" height="220.0" fill="#f59e0b"/>
+<text x="470.0" y="64.0" font-size="13" text-anchor="middle">20,466</text>
+<text x="470.0" y="312" font-size="12" text-anchor="middle">double delete</text>
+<text x="470.0" y="330" font-size="12" text-anchor="middle">of 100,000 races</text>
+<rect x="663.3" y="290.0" width="120" height="1.0" fill="#16a34a"/>
+<text x="723.3" y="284.0" font-size="13" text-anchor="middle">0</text>
+<text x="723.3" y="312" font-size="12" text-anchor="middle">versioned set</text>
+<text x="723.3" y="330" font-size="12" text-anchor="middle">of 100,000 races</text>
+<text x="28" y="340" font-size="13">read-miss race, delete delay 0-2 ms, set delay 0-5 ms (assumed); double delete at 500 ms.</text>
+<text x="28" y="366" font-size="13">Python 3.13.12, seeded simulation (seed 42).</text></g></svg>
