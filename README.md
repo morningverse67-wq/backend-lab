@@ -2,7 +2,7 @@
 
 ![백엔드 성능 문제를 재현하고 측정하는 backend-lab](assets/cover.png)
 
-Small, runnable experiments that reproduce and measure backend performance problems: N+1, indexes, paging, MyBatis.
+Small, runnable experiments that reproduce and measure backend performance and concurrency problems: N+1, indexes, paging, locks, caches, retries, queues (45 labs).
 
 ### 30초 실행
 
@@ -70,6 +70,7 @@ MyBatis + MySQL 버전(Java 21, Maven, Docker)은 [labs/003-mybatis-nplusone](la
 | 042 | [Negative caching](labs/042-negative-caching) | 없는 키 조회 3만 71건: 매번 저장소는 3만 71번, TTL 5초는 1만 8,257번(39.3% 절감)·틀린 "없음" 5건, TTL 30초는 9,784번(67.5%)·61건, 만들 때 지우면 0건 | Python | 후속 글 후보 |
 | 043 | [캐시 워밍업](labs/043-cache-warmup) | 재시작 직후 10초(요청 1만 건): 워밍업 없으면 적중률 78.5%·저장소 2,146번, 인기 키 500개 미리 채우면 83.3%·1,674번(22.0% 감소), 2,000개는 84.0%·1,596번이지만 전체 조회는 17,341번 | Python | 후속 글 후보 |
 | 044 | [2단계 캐시(로컬 + 분산)](labs/044-two-level-cache) | 읽기 9만 7,985건: 분산 캐시만 평균 1.090 ms·옛 값 0건, 로컬 TTL 1초 앞에 두면 0.506 ms(53.6% 감소)·옛 값 17,488건(17.85%), TTL 10초는 0.291 ms·39,802건(40.62%) | Python | 후속 글 후보 |
+| 045 | [Cache-aside 갱신 경쟁](labs/045-cache-aside-race) | 10만 번 중 20,466번에서 늦게 도착한 옛 값이 캐시에 남음. 삭제만 하면 TTL 10초, 500 ms 뒤 한 번 더 삭제하면 평균 498 ms, 버전 확인 후 저장하면 0건 | Python | 후속 글 후보 |
 
 다음 주제는 [ROADMAP.md](ROADMAP.md)에.
 
