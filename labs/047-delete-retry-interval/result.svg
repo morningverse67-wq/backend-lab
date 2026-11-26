@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="380" viewBox="0 0 900 380" role="img" aria-labelledby="t d">
+<title id="t">Stale read ratio by retry gap</title>
+<desc id="d">gap 0 ms 5.01% stale; gap 10 ms 5.42% stale; gap 50 ms 7.10% stale; gap 200 ms 13.40% stale; gap 500 ms 23.77% stale.</desc>
+<rect width="900" height="380" fill="#f8fafc"/><g font-family="sans-serif" fill="#0f172a">
+<text x="28" y="40" font-size="22" font-weight="bold">Stale read ratio by delete retry gap</text>
+<line x1="90" y1="290" x2="850" y2="290" stroke="#94a3b8"/>
+<rect x="121.0" y="243.6" width="90" height="46.4" fill="#2563eb"/>
+<text x="166.0" y="237.6" font-size="13" text-anchor="middle">5.01%</text>
+<text x="166.0" y="312" font-size="12" text-anchor="middle">gap 0 ms</text>
+<text x="166.0" y="330" font-size="12" text-anchor="middle">50,000 of 998,300</text>
+<rect x="273.0" y="239.8" width="90" height="50.2" fill="#2563eb"/>
+<text x="318.0" y="233.8" font-size="13" text-anchor="middle">5.42%</text>
+<text x="318.0" y="312" font-size="12" text-anchor="middle">gap 10 ms</text>
+<text x="318.0" y="330" font-size="12" text-anchor="middle">54,146 of 998,300</text>
+<rect x="425.0" y="224.3" width="90" height="65.7" fill="#2563eb"/>
+<text x="470.0" y="218.3" font-size="13" text-anchor="middle">7.10%</text>
+<text x="470.0" y="312" font-size="12" text-anchor="middle">gap 50 ms</text>
+<text x="470.0" y="330" font-size="12" text-anchor="middle">70,879 of 998,300</text>
+<rect x="577.0" y="166.0" width="90" height="124.0" fill="#2563eb"/>
+<text x="622.0" y="160.0" font-size="13" text-anchor="middle">13.40%</text>
+<text x="622.0" y="312" font-size="12" text-anchor="middle">gap 200 ms</text>
+<text x="622.0" y="330" font-size="12" text-anchor="middle">133,742 of 998,300</text>
+<rect x="729.0" y="70.0" width="90" height="220.0" fill="#2563eb"/>
+<text x="774.0" y="64.0" font-size="13" text-anchor="middle">23.77%</text>
+<text x="774.0" y="312" font-size="12" text-anchor="middle">gap 500 ms</text>
+<text x="774.0" y="330" font-size="12" text-anchor="middle">237,291 of 998,300</text>
+<text x="28" y="340" font-size="13">Delete fails 30% per try, mean delay 50 ms (assumed), 1 s window, 500 reads/s.</text>
+<text x="28" y="366" font-size="13">Python 3.13.12, seeded simulation (seed 42).</text></g></svg>
